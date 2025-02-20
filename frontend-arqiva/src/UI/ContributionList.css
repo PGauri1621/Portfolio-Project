@@ -1,0 +1,35 @@
+/* Define the grid container */
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Create columns that automatically adjust based on available space */
+    gap: 16px;  /* Space between grid items */
+    padding: 16px;
+}
+
+/* Style for each contribution card */
+.contribution-card {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-8px);  /* Lift the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Bigger shadow for hover effect */
+}
+
+.contribution-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.contribution-card p {
+    font-size: 1em;
+    color: #333;
+}
+
+

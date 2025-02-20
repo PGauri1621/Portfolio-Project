@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './UI/Home';
 import ContributionList from './UI/ContributionList';
 import { Link } from 'react-router-dom';  // Import the Link component
+import '@blueprintjs/core/lib/css/blueprint.css';
+
+
 
 const App = () => {
   return (
