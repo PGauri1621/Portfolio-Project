@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';  // Import axios
 
 const ContributionList = () => {
     const [contributions, setContributions] = useState([]);
@@ -7,11 +8,12 @@ const ContributionList = () => {
     useEffect(() => {
         const fetchContributions = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/contributions/');
-                const data = await response.json();
-                setContributions(data.contributions);
-            } catch (error) {
-                console.error('Error fetching contributions:', error);
+                // Use axios to make the GET request
+                const response = await axios.get('http://127.0.0.1:8000/contributions/');
+                setContributions(response.data.contributions);  // Set the response data to state
+                
+            } catch (err) {
+                console.error('Error fetching contributions:', err);
             } finally {
                 setLoading(false);
             }
@@ -30,6 +32,8 @@ const ContributionList = () => {
                     <li key={contribution.id}>
                         <h3>{contribution.title}</h3>
                         <p>{contribution.description}</p>
+                        <p>{contribution.startTime}</p>
+                        <p>{contribution.endTime}</p>
                         <p>Owner: {contribution.owner}</p>
                     </li>
                 ))}
