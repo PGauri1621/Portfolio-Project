@@ -1,0 +1,61 @@
+/* Container for the upcoming list */
+.upcoming-list-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff; /* White background for the whole container */
+    border-radius: 8px; /* Rounded corners for the overall container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Header for the card */
+.card-header {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #007bff; /* Blue background for the header */
+    color: #fff; /* White text color */
+    padding: 12px;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+}
+
+/* Style for list items inside the card */
+.list-group-item {
+    margin-bottom: 20px; /* Increased space between list items */
+    padding: 20px; /* Increased padding for better spacing */
+    background-color: #f9f9f9; /* Light background for list items */
+    border: 1px solid #ddd; /* Light border for subtle separation */
+    border-radius: 8px; /* Rounded corners for each list item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect on list items */
+.list-group-item:hover {
+    transform: translateY(-5px); /* Lift the item on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Style for title in list items */
+.list-group-item h5 {
+    font-size: 1.1em;
+    margin-bottom: 12px; /* Spacing below title */
+    font-weight: bold; /* Make title bold */
+    color: #333; /* Dark text for better readability */
+}
+
+/* Style for description and start time */
+.list-group-item p {
+    font-size: 0.95em;
+    color: #555; /* Lighter color for description and start time */
+}
+
+/* Adding some responsive design for mobile view */
+@media (max-width: 768px) {
+    .list-group-item {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .card-header {
+        font-size: 1.1em; /* Slightly smaller header on mobile */
+    }
+}

@@ -7,7 +7,7 @@
 
 /* Set a background image for the entire home component */
 .home-container {
-    background-image: url('../UI/2610205036_288847a74d_b.jpg');  /* Use your actual image path */
+    background-image: url('../UI/earth.jpg');  /* Use your actual image path */
     background-size: cover;  /* Ensure the image covers the entire page */
     background-position: center;  /* Center the image */
     background-attachment: fixed;  /* Keep the background fixed during scrolling */

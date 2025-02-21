@@ -1,35 +1,72 @@
-/* Define the grid container */
-.contribution-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Create columns that automatically adjust based on available space */
-    gap: 16px;  /* Space between grid items */
-    padding: 16px;
+/* Container for the entire layout */
+.contribution-list-container {
+    display: flex;  /* Use flexbox to position components */
+    padding: 20px;
 }
 
-/* Style for each contribution card */
+/* Left side for the UpComingList component */
+.left-side {
+    width: 25%;  /* Take up 25% of the page width */
+    padding-right: 20px;  /* Add some spacing between left and main content */
+}
+
+/* Main content area for the ContributionList and pagination */
+.main-content {
+    width: 75%;  /* Take up the remaining 75% of the page */
+}
+
+/* Header styling for the SearchBox (now smaller size) */
+.header {
+    width: 100%;  /* Ensure the SearchBox takes the full width of the available space */
+    margin-bottom: 20px;
+    padding-bottom: 10px; /* Optional padding to give some space below */
+}
+
+/* Style for the search box (smaller size) */
+.search-box input {
+    width: 100%;  /* Ensure it takes up 100% of the container's width */
+    padding: 10px;  /* Reduced padding for a smaller search box */
+    font-size: 16px;  /* Slightly smaller font size for a more compact search bar */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;  /* Ensure the padding doesn't affect the width */
+}
+
+/* Contribution grid for the cards */
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 cards per row */
+    gap: 16px;
+    width: 100%;
+}
+
+/* Style for each contribution card (reduced by 10%) */
 .contribution-card {
     background-color: #f9f9f9;
-    padding: 16px;
+    padding: 14px;  /* Reduced padding to shrink the card */
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.9em;  /* Reduced font size by 10% */
+    margin-bottom: 10px;  /* Space at the bottom of each card */
 }
 
 .contribution-card:hover {
-    transform: translateY(-8px);  /* Lift the card on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Bigger shadow for hover effect */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Smaller font size for the title inside the card */
 .contribution-card h3 {
-    font-size: 1.2em;
-    margin-bottom: 8px;
+    font-size: 1.1em;  /* Reduced title font size */
+    margin-bottom: 8px;  /* Slight margin below the title */
 }
 
-.contribution-card p {
-    font-size: 1em;
-    color: #333;
+/* Style the pagination controls */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
-
-
