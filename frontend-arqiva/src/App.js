@@ -5,29 +5,32 @@ import ContributionList from './UI/ContributionList';
 import { Link } from 'react-router-dom';  // Import the Link component
 import '@blueprintjs/core/lib/css/blueprint.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>  {/* Use Link component */}
-            </li>
-            <li>
-              <Link to="/contributions">Contributions</Link>  {/* Use Link component */}
-            </li>
-          </ul>
-        </nav>
+    <Home/>
+    // <Router>
+    //   <div>
+    //     <nav>
+    //       <ul>
+    //         <li>
+    //           <Link to="/">Home</Link>  {/* Use Link component */}
+    //         </li>
+    //         <li>
+    //           <Link to="/contributions">Contributions</Link>  {/* Use Link component */}
+    //         </li>
+    //       </ul>
+    //     </nav>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contributions" element={<ContributionList />} />
-        </Routes>
-      </div>
-    </Router>
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/contributions" element={<ContributionList />} />
+    //     </Routes>
+    //   </div>
+    // </Router>
   );
 };
 
