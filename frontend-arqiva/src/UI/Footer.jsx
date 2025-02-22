@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <Row>
+        <Row className="footer-row">
           {/* Contact Information */}
-          <Col xs={12} md={3}>
+          <Col xs={12} md={3} className="footer-column">
             <div className="contact-info">
               <h5>Contact Us</h5>
               <p>Email: info@sugarmedia.com</p>
@@ -18,19 +18,21 @@ const Footer = () => {
             </div>
           </Col>
 
-          {/* About Us Section */}
-          <Col xs={12} md={3}>
-            <div className="about-us">
-              <h5>About Us</h5>
+          {/* Legal Section */}
+          <Col xs={12} md={3} className="footer-column">
+            <div className="legal">
+              <h5>Legal</h5>
               <p>
-                We are a dynamic media company providing top-tier content and digital marketing services. 
-                Our mission is to connect people and businesses with the power of media.
+                This website is owned and operated by Sugar Media. By using this website, you agree to 
+                comply with the terms and conditions set forth. For more details, please refer to our 
+                <a href="/terms" target="_blank" rel="noopener noreferrer"> Terms of Service</a> and 
+                <a href="/privacy-policy" target="_blank" rel="noopener noreferrer"> Privacy Policy</a>.
               </p>
             </div>
           </Col>
 
           {/* Quick Links Section */}
-          <Col xs={12} md={3}>
+          <Col xs={12} md={3} className="footer-column">
             <div className="quick-links">
               <h5>Quick Links</h5>
               <ul>
@@ -43,9 +45,9 @@ const Footer = () => {
           </Col>
 
           {/* Social Media Icons */}
-          <Col xs={12} md={3} className="social-icons">
+          <Col xs={12} md={3} className="footer-column">
             <h5>Follow Us</h5>
-            <div>
+            <div className="social-icons">
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="social-icon" />
               </a>
