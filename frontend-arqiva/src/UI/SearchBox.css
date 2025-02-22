@@ -1,0 +1,49 @@
+/* Header styling for the SearchBox */
+.header {
+    width: 100%;
+    margin-bottom: 20px; /* Add margin below to separate the search box from the content */
+    padding-bottom: 10px; /* Optional padding to give some space below */
+}
+
+/* Style for the search box */
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Focus state for the search box */
+.search-box input:focus {
+    border-color: #c80032;
+    box-shadow: 0 0 5px rgba(200, 0, 50, 0.3);
+}
+
+/* Contribution grid for the cards */
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    margin-top: 20px;  /* Add margin to create space between the search box and cards */
+}
+
+/* General spacing */
+.contribution-list-container {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.left-side {
+    width: 25%;
+    padding-right: 20px;
+}
+
+.main-content {
+    width: 75%;
+}
+
+/* Contribution card and pagination styles are unchanged */

@@ -3,30 +3,31 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #fff; /* White background for the whole container */
-    border-radius: 8px; /* Rounded corners for the overall container */
+    background-color: #e15d5d; /* White background for the entire container */
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-bottom: 20px; /* Space between the UpComingList and the other components */
 }
 
-/* Header for the card */
+/* Header for the card (matching your theme) */
 .card-header {
     font-size: 1.3em;
     font-weight: bold;
     text-align: center;
-    background-color: #007bff; /* Blue background for the header */
-    color: #fff; /* White text color */
+    background-color: #c80032; /* Matching your website's main theme color */
+    color: #fff; /* White text for contrast */
     padding: 12px;
     border-radius: 8px 8px 0 0; /* Rounded top corners */
 }
 
 /* Style for list items inside the card */
 .list-group-item {
-    margin-bottom: 20px; /* Increased space between list items */
-    padding: 20px; /* Increased padding for better spacing */
+    margin-bottom: 16px; /* Reduced margin for a cleaner layout */
+    padding: 16px; /* Adjusted padding for consistency */
     background-color: #f9f9f9; /* Light background for list items */
-    border: 1px solid #ddd; /* Light border for subtle separation */
-    border-radius: 8px; /* Rounded corners for each list item */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect on list items */
@@ -38,8 +39,8 @@
 /* Style for title in list items */
 .list-group-item h5 {
     font-size: 1.1em;
-    margin-bottom: 12px; /* Spacing below title */
-    font-weight: bold; /* Make title bold */
+    margin-bottom: 12px;
+    font-weight: bold;
     color: #333; /* Dark text for better readability */
 }
 
@@ -52,7 +53,7 @@
 /* Adding some responsive design for mobile view */
 @media (max-width: 768px) {
     .list-group-item {
-        padding: 15px; /* Reduce padding on smaller screens */
+        padding: 12px; /* Reduce padding on smaller screens */
     }
 
     .card-header {

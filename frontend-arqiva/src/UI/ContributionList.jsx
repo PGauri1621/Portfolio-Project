@@ -46,7 +46,8 @@ const ContributionList = () => {
     const totalPages = Math.ceil(contributions.length / contributionsPerPage);
 
     return (
-      <div className="contribution-list-container">
+        <div className="page-wrapper">
+            <div className="contribution-list-container">
           {/* Left-side component (UpComingList) */}
           <div className="left-side">
               <UpComingList />
@@ -102,6 +103,8 @@ const ContributionList = () => {
               </Pagination>
           </div>
       </div>
+        </div>
+      
   );
 };
 

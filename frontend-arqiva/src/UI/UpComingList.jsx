@@ -1,48 +1,62 @@
-import React from 'react';
-import { ListGroup, Card } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, Form } from 'react-bootstrap';
 
 const UpComingList = () => {
   // Dummy data for upcoming contributions
   const upcomingContributions = [
     {
       id: 1,
-      title: 'Contribution 1',
-      description: 'This is the description for contribution 1.',
-      startTime: '2025-03-01T10:00:00',
+      title: 'News',
     },
     {
       id: 2,
-      title: 'Contribution 2',
-      description: 'This is the description for contribution 2.',
-      startTime: '2025-03-05T09:00:00',
+      title: 'Cooking',
     },
     {
       id: 3,
-      title: 'Contribution 3',
-      description: 'This is the description for contribution 3.',
-      startTime: '2025-03-10T14:00:00',
+      title: 'Sports',
     },
     {
       id: 4,
-      title: 'Contribution 4',
-      description: 'This is the description for contribution 4.',
-      startTime: '2025-03-12T08:00:00',
+      title: 'Global Politics',
+    },
+    {
+      id: 5,
+      title: 'Fitness',
     },
   ];
+
+  const [selectedContributions, setSelectedContributions] = useState([]);
+
+  const handleCheckboxChange = (e) => {
+    const { value, checked } = e.target;
+    setSelectedContributions((prevState) =>
+      checked ? [...prevState, value] : prevState.filter((item) => item !== value)
+    );
+  };
 
   return (
     <Card className="upcoming-list-container">
       <Card.Header className="card-header">Upcoming Contributions</Card.Header>
       <Card.Body>
-        <ListGroup>
+        <Form>
           {upcomingContributions.map((contribution) => (
-            <ListGroup.Item key={contribution.id} className="list-group-item">
-              <h5>{contribution.title}</h5>
-              <p>{contribution.description}</p>
-              <p><strong>Start Time:</strong> {contribution.startTime}</p>
-            </ListGroup.Item>
+            <Form.Check
+              key={contribution.id}
+              type="checkbox"
+              value={contribution.title}
+              id={`checkbox-${contribution.id}`}
+              label={
+                <>
+                  <strong>{contribution.title}</strong>
+                  <p>{contribution.description}</p>
+                </>
+              }
+              onChange={handleCheckboxChange}
+              className="checkbox-item"
+            />
           ))}
-        </ListGroup>
+        </Form>
       </Card.Body>
     </Card>
   );

@@ -9,13 +9,14 @@ import ContainerCards from './ContainerCards.jsx';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Footer from './Footer'; // Import Footer component
+import Logo from './Logo.jsx';  // Import Logo Component
 
 const Home = () => {
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home" className="navbar-brand">SuGaR Media</Navbar.Brand>
+          <Navbar.Brand href="#home" className="navbar-brand"> <Logo /> {/* Use the Logo component */}</Navbar.Brand>
           <Nav className="nav-center">
             <Nav.Link href="#home">About</Nav.Link>
             <Nav.Link href="#features">Media</Nav.Link>

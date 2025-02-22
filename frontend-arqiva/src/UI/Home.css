@@ -1,9 +1,42 @@
 /* src/Home.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Lora:wght@700&family=Montserrat:wght@600&display=swap');
+
+/* src/Home.css */
 .navbar.bg-dark {
-    background-color: #c80032 !important;  /* Background color for the navbar */
+  background-color: #222 !important; /* Dark, sophisticated background */
 }
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar .nav-link {
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar .nav-link:hover {
+  color: #f8f9fa !important;
+  text-decoration: none;
+}
+
 
 /* Set a background image for the entire home component */
 .home-container {
@@ -16,47 +49,9 @@
 }
   
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between; /* Ensures navbar items are spaced out */
-    align-items: center;
-}
 
-.navbar-brand {
-    font-family: 'Playfair Display', serif; /* Elegant serif font for stylish look */
-    font-weight: 700;  /* Bold font for brand name */
-    font-size: 2rem;  /* Slightly larger for prominence */
-    color: white !important;  /* Text color */
-    text-transform: none;  /* Keep the case exactly as it is (SuGaR) */
-    letter-spacing: 2px;  /* Increase letter spacing for elegance */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
-    transition: transform 0.3s ease, color 0.3s ease-in-out; /* Smooth transition on hover */
-    text-decoration: none;  /* Ensure there's no underline */
-}
 
-.navbar-brand:hover {
-    color: #f8f9fa !important;  /* Lighter color on hover */
-    transform: scale(1.1);  /* Slightly enlarge text on hover for effect */
-    text-decoration: none;  /* Prevent underline on hover */
-}
 
-.navbar .nav-center {
-    display: flex;
-    justify-content: center; /* Centers the nav links horizontally */
-    width: 100%;
-}
-
-.navbar .nav-link {
-    color: white !important;  /* Ensure links are white */
-    font-family: 'Raleway', sans-serif;  /* Clean, modern font for the links */
-    font-weight: 500;
-    text-decoration: none;  /* Ensure nav links don't have underlines by default */
-}
-
-.navbar .nav-link:hover {
-    color: #f8f9fa !important; /* Light color on hover */
-    text-decoration: none;  /* Prevent underline on hover for nav links */
-}
 
 /* General styles for all cards */
 .card {
