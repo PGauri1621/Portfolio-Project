@@ -1,0 +1,104 @@
+/* src/Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Lora:wght@700&family=Montserrat:wght@600&display=swap');
+
+/* src/Home.css */
+.navbar.bg-dark {
+  background-color: #222 !important; /* Dark, sophisticated background */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar .nav-link {
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar .nav-link:hover {
+  color: #f8f9fa !important;
+  text-decoration: none;
+}
+
+
+/* Set a background image for the entire home component */
+.home-container {
+    background-image: url('../UI/earth.jpg');  /* Use your actual image path */
+    background-size: cover;  /* Ensure the image covers the entire page */
+    background-position: center;  /* Center the image */
+    background-attachment: fixed;  /* Keep the background fixed during scrolling */
+    min-height: 100vh;  /* Ensure it covers the entire viewport height */
+    padding-top: 56px;  /* Account for navbar height */
+}
+  
+
+
+
+
+
+/* General styles for all cards */
+.card {
+    position: relative;
+    background-color: #fff;  /* Default background color */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* BBC Card Background */
+  .card-header.bbc {
+    font-family: 'Roboto', sans-serif;  /* BBC-like font */
+    color: #bb1919;  /* BBC Red */
+    background-color: #f4f4f4;  /* Light grey background */
+    background-image: url('../UI/BBC_background.jpg');  /* BBC Image */
+    background-size: cover;
+    background-position: center;
+    color: white;  /* Ensure text is readable */
+  }
+  
+  /* LBC Radio Card Background */
+  .card-header.lbc {
+    font-family: 'Montserrat', sans-serif;  /* LBC Radio-like font */
+    color: #ff6600;  /* LBC Orange */
+    background-color: #1a1a1a;  /* Dark grey background */
+    background-image: url('../UI/LBC_background.jpg');  /* LBC Image */
+    background-size: cover;
+    background-position: center;
+    color: white;  /* Ensure text is readable */
+  }
+  
+  /* ITV4 Card Background */
+  .card-header.itv4 {
+    font-family: 'Lora', serif;  /* ITV4-like font */
+    color: #ff3b00;  /* ITV Orange */
+    background-color: #111;  /* Very dark background */
+    background-image: url('../UI/ITV_background.jpeg');  /* ITV4 Image */
+    background-size: cover;
+    background-position: center;
+    color: white;  /* Ensure text is readable */
+  }
+  
+  /* Optional: Add some padding or adjustments for the card headers */
+  .card-header {
+    padding: 12px;
+    text-transform: uppercase;  /* Optionally, for making company names all uppercase */
+    position: relative;  /* Ensure that text is on top of the image */
+    z-index: 1;  /* Keep the header text above the background */
+  }
+  

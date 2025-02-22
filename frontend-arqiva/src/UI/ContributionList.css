@@ -1,0 +1,77 @@
+/* Container for the entire layout */
+.page-wrapper {
+    background: linear-gradient(to bottom, #f7c8d8, #c80032); /* Soft pastel pink transitioning to red */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.contribution-list-container {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f4f4;  /* Soft light gray background */
+}
+
+/* Left side for the UpComingList component */
+.left-side {
+    width: 25%;
+    padding-right: 20px;
+}
+
+/* Main content area for the ContributionList and pagination */
+.main-content {
+    width: 75%;
+}
+
+/* Contribution grid for the cards */
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+}
+
+/* Style for each contribution card */
+.contribution-card {
+    background-color: #fff;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the title inside the card */
+.contribution-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+/* Red accent for card hover */
+.contribution-card:hover {
+    border-color: #c80032; /* Red border on hover */
+}
+
+/* Style for pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #c80032; /* Active page color */
+    border-color: #c80032;
+}
+
+.pagination .page-link {
+    color: #c80032;  /* Red color for pagination links */
+}

@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './UI/Home';
+import ContributionList from './UI/ContributionList';
+import { Link } from 'react-router-dom';  // Import the Link component
+import '@blueprintjs/core/lib/css/blueprint.css';
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Application!!
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contributions" element={<ContributionList />} />
+      </Routes>
+    </Router>
+    // <Router>
+    //   <div>
+    //     <nav>
+    //       <ul>
+    //         <li>
+    //           <Link to="/">Home</Link>  {/* Use Link component */}
+    //         </li>
+    //         <li>
+    //           <Link to="/contributions">Contributions</Link>  {/* Use Link component */}
+    //         </li>
+    //       </ul>
+    //     </nav>
+
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/contributions" element={<ContributionList />} />
+    //     </Routes>
+    //   </div>
+    // </Router>
   );
-}
+};
 
 export default App;
+
