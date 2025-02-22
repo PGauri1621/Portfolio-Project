@@ -1,34 +1,78 @@
-// Home.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import './Home.css';
-import ContainerCards from './ContainerCards.jsx';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { useState } from 'react';
+import { Navbar, Nav, Container, Button, Row, Col } from 'react-bootstrap';
+import SignIn from './SignIn.jsx';
+import Register from './Register.jsx';
+import ContainerCards from './ContainerCards';
 import Footer from './Footer'; // Import Footer component
-import Logo from './Logo.jsx';  // Import Logo Component
+import Logo from './Logo';  // Import Logo Component
+import './Home.css';
+import NavDropdown from 'react-bootstrap/NavDropdown'; // Import NavDropdown
+import WhatWeDo from './WhatWeDo.jsx';
+import MeetOurTeam from './MeetOurTeam.jsx';
 
 const Home = () => {
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
+  const handleSignInClose = () => setShowSignIn(false);
+  const handleSignInShow = () => setShowSignIn(true);
+
+  const handleRegisterClose = () => setShowRegister(false);
+  const handleRegisterShow = () => setShowRegister(true);
+
   return (
     <>
+      {/* Navbar */}
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home" className="navbar-brand"> <Logo /> {/* Use the Logo component */}</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <Logo />
+          </Navbar.Brand>
           <Nav className="nav-center">
-            <Nav.Link href="#home">About</Nav.Link>
+            <Nav.Link href="#home">About us</Nav.Link>
             <Nav.Link href="#features">Media</Nav.Link>
             <Nav.Link href="#pricing">Utilities</Nav.Link>
-            <Nav.Link href="#features">Satellite Data</Nav.Link>
-            <Nav.Link href="#pricing">News & Views</Nav.Link>
-            <Nav.Link href="#features">Life & News</Nav.Link>
-            <Nav.Link href="#pricing">Contact</Nav.Link>
+            <NavDropdown title="Careers" id="navbar-careers-dropdown" className="nav-dropdown">
+              <NavDropdown.Item href="#job1">Job 1</NavDropdown.Item>
+              <NavDropdown.Item href="#job2">Job 2</NavDropdown.Item>
+              <NavDropdown.Item href="#job3">Job 3</NavDropdown.Item>
+            </NavDropdown>
+
+            {/* Dropdown for Investors */}
+            <NavDropdown title="Investors" id="navbar-investors-dropdown" className="nav-dropdown">
+              <NavDropdown.Item href="#investment1">Investment 1</NavDropdown.Item>
+              <NavDropdown.Item href="#investment2">Investment 2</NavDropdown.Item>
+              <NavDropdown.Item href="#investment3">Investment 3</NavDropdown.Item>
+            </NavDropdown>
+
+            {/* Dropdown for Languages */}
+            <NavDropdown title="Languages" id="navbar-languages-dropdown" className="nav-dropdown">
+              <NavDropdown.Item href="#english">English</NavDropdown.Item>
+              <NavDropdown.Item href="#spanish">Spanish</NavDropdown.Item>
+              <NavDropdown.Item href="#french">French</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            {/* Sign In Button */}
+            <Button variant="outline-light" onClick={handleSignInShow}>
+              Sign In
+            </Button>
+
+            {/* Register Button */}
+            <Button variant="outline-light" onClick={handleRegisterShow} className="ms-2">
+              Register
+            </Button>
           </Nav>
         </Container>
       </Navbar>
 
+      {/* What We Do Section */}
+      <WhatWeDo />
+
+      {/* Meet Our Team Section */}
+      <MeetOurTeam />
+
+      {/* Main Content: Container Cards */}
       <div className="home-container">
         <Container className="my-4">
           <Row xs={1} md={2} lg={2} className="g-4">
@@ -61,7 +105,7 @@ const Home = () => {
               <ContainerCards 
                 header="ITV4"
                 title="ITV4 Channel"
-                text="Content for ITV4. Explore the best shows and programs available on ITV4."
+                text="Content for ITV4. Explore the best shows and programs."
                 buttonText="Go somewhere"
                 companyClass="itv4"
                 linkTo="/itv4"  // linkTo prop for ITV4
@@ -72,8 +116,8 @@ const Home = () => {
             <Col>
               <ContainerCards 
                 header="Explore"
-                title="Company X News"
-                text="This is the content for another company card. Discover more about Company X."
+                title="Excited to be part of our journey?"
+                text="Please SignIn/Register to be a our valuable member!"
                 buttonText="Find out more"
                 companyClass="other"
                 linkTo="/contributions"  // linkTo prop for Explore Card
@@ -85,6 +129,12 @@ const Home = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Sign In Modal */}
+      <SignIn show={showSignIn} handleClose={handleSignInClose} />
+
+      {/* Register Modal */}
+      <Register show={showRegister} handleClose={handleRegisterClose} />
     </>
   );
 };
