@@ -6,8 +6,15 @@
 }
 
 /* Style for the search box */
-.search-box input {
+.search-box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;  /* Add gap between input field and button */
     width: 100%;
+}
+
+.search-box input {
+    flex-grow: 1; /* Make input take up the remaining space */
     padding: 12px;
     font-size: 16px;
     border-radius: 4px;
@@ -19,6 +26,29 @@
 .search-box input:focus {
     border-color: #c80032;
     box-shadow: 0 0 5px rgba(200, 0, 50, 0.3);
+}
+
+/* Style for the search button */
+.search-box button {
+    padding: 12px 20px;  /* Add padding for a more clickable size */
+    font-size: 16px;
+    background-color: #c80032;  /* Strong, professional color */
+    color: white;  /* White text for contrast */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+/* Button hover and active states */
+.search-box button:hover {
+    background-color: #a40026;  /* Slightly darker shade on hover */
+    transform: translateY(-2px);  /* Slight lift effect on hover */
+}
+
+.search-box button:active {
+    background-color: #8b0020;  /* Darker shade on click */
+    transform: translateY(0);  /* Remove the lift effect */
 }
 
 /* Contribution grid for the cards */

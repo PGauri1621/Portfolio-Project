@@ -1,65 +1,31 @@
-import React, { useState } from 'react';
-import { Card, Form } from 'react-bootstrap';
+// src/UI/UpComingList.jsx
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { Checkbox } from 'antd';
+import { useFilter } from './ContextManager';
+import './UpComingList.css';
 
-const UpComingList = () => {
-  // Dummy data for upcoming contributions
-  const upcomingContributions = [
-    {
-      id: 1,
-      title: 'News',
-    },
-    {
-      id: 2,
-      title: 'Cooking',
-    },
-    {
-      id: 3,
-      title: 'Sports',
-    },
-    {
-      id: 4,
-      title: 'Global Politics',
-    },
-    {
-      id: 5,
-      title: 'Fitness',
-    },
-  ];
+const UpComingList = ({ contributions }) => {
+    const { filters, updateFilters } = useFilter();
+    const { selectedStatus } = filters;
 
-  const [selectedContributions, setSelectedContributions] = useState([]);
+    const handleStatusChange = (checkedValues) => {
+        updateFilters({ selectedStatus: checkedValues });
+    };
 
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    setSelectedContributions((prevState) =>
-      checked ? [...prevState, value] : prevState.filter((item) => item !== value)
+    return (
+        <Card className="upcoming-list-card">
+            <Card.Body>
+                <h3>Status Filter</h3>
+                <Checkbox.Group
+                    options={['completed', 'active', 'scheduled']}
+                    value={selectedStatus}
+                    onChange={handleStatusChange}
+                    style={{ display: 'flex', flexDirection: 'column' }}
+                />
+            </Card.Body>
+        </Card>
     );
-  };
-
-  return (
-    <Card className="upcoming-list-container">
-      <Card.Header className="card-header">Upcoming Contributions</Card.Header>
-      <Card.Body>
-        <Form>
-          {upcomingContributions.map((contribution) => (
-            <Form.Check
-              key={contribution.id}
-              type="checkbox"
-              value={contribution.title}
-              id={`checkbox-${contribution.id}`}
-              label={
-                <>
-                  <strong>{contribution.title}</strong>
-                  <p>{contribution.description}</p>
-                </>
-              }
-              onChange={handleCheckboxChange}
-              className="checkbox-item"
-            />
-          ))}
-        </Form>
-      </Card.Body>
-    </Card>
-  );
 };
 
 export default UpComingList;
