@@ -9,6 +9,7 @@ import './Home.css';
 import NavDropdown from 'react-bootstrap/NavDropdown'; // Import NavDropdown
 import WhatWeDo from './WhatWeDo.jsx';
 import MeetOurTeam from './MeetOurTeam.jsx';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 
 const Home = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -31,12 +32,9 @@ const Home = () => {
           <Nav className="nav-center">
             <Nav.Link href="#home">About us</Nav.Link>
             <Nav.Link href="#features">Media</Nav.Link>
-            <Nav.Link href="#pricing">Utilities</Nav.Link>
-            <NavDropdown title="Careers" id="navbar-careers-dropdown" className="nav-dropdown">
-              <NavDropdown.Item href="#job1">Job 1</NavDropdown.Item>
-              <NavDropdown.Item href="#job2">Job 2</NavDropdown.Item>
-              <NavDropdown.Item href="#job3">Job 3</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link as={Link} to="/contributions" className="your-custom-class">Contributions List</Nav.Link> {/* Route to /contribution */}
+
+
 
             {/* Dropdown for Investors */}
             <NavDropdown title="Investors" id="navbar-investors-dropdown" className="nav-dropdown">
@@ -120,7 +118,6 @@ const Home = () => {
                 text="Please SignIn/Register to be a our valuable member!"
                 buttonText="Find out more"
                 companyClass="other"
-                linkTo="/contributions"  // linkTo prop for Explore Card
               />
             </Col>
           </Row>
