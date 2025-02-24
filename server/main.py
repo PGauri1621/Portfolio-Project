@@ -3,11 +3,15 @@ from flask_cors import CORS
 import json
 import re
 from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-CORS(app)
 
-# SIMPLE store of data for this exercise
+# Allow only specific origins for security
+CORS(app, origins="http://localhost:3000")  # Allow only the frontend URL
+
+# Simple store of data for this exercise
 DATA = {}
 
 # Load data from JSON file
@@ -42,13 +46,15 @@ def list_contributions():
             search_query in c['owner'].lower()
         )]
 
-    # Filtering logic
+    # Filtering logic based on additional filters passed in query
     filters = ['id', 'owner', 'title', 'description', 'startBefore', 'startAfter', 'endBefore', 'endAfter']
     for f in filters:
         value = request.args.get(f)
         if value:
             if 'Before' in f or 'After' in f:
                 value_dt = parse_datetime(value)
+                if value_dt is None:
+                    continue  # Skip if datetime parsing failed
                 key = 'startTime' if 'start' in f else 'endTime'
                 comparator = (lambda c: parse_datetime(c[key]) < value_dt) if 'Before' in f else (lambda c: parse_datetime(c[key]) > value_dt)
                 contributions = [c for c in contributions if comparator(c)]
@@ -72,9 +78,6 @@ def list_contributions():
     })
 
 # User registration and login (2nd part of your app)
-from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
