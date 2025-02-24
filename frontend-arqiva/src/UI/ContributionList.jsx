@@ -1,4 +1,3 @@
-// src/UI/ContributionList.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Pagination } from 'react-bootstrap';
@@ -22,8 +21,8 @@ const ContributionList = () => {
             try {
                 setLoading(true);
                 const params = {
-                    skip: (currentPage - 1) * contributionsPerPage,
-                    limit: contributionsPerPage,
+                    skip: (currentPage - 1) * contributionsPerPage,  // Calculate skip
+                    limit: contributionsPerPage,  // Define contributions per page
                     searchQuery,
                 };
                 const response = await axios.get('http://127.0.0.1:8000/contributions/', { params });
