@@ -10,6 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'; // Import NavDropdown
 import WhatWeDo from './WhatWeDo.jsx';
 import MeetOurTeam from './MeetOurTeam.jsx';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import CookiesFooter from './CookiesFooter';  // Import the new CookiesFooter component
 
 const Home = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -33,9 +34,6 @@ const Home = () => {
             <Nav.Link href="#home">About us</Nav.Link>
             <Nav.Link href="#features">Media</Nav.Link>
             <Nav.Link as={Link} to="/contributions" className="your-custom-class">Contributions List</Nav.Link> {/* Route to /contribution */}
-
-
-
             {/* Dropdown for Investors */}
             <NavDropdown title="Investors" id="navbar-investors-dropdown" className="nav-dropdown">
               <NavDropdown.Item href="#investment1">Investment 1</NavDropdown.Item>
@@ -132,6 +130,9 @@ const Home = () => {
 
       {/* Register Modal */}
       <Register show={showRegister} handleClose={handleRegisterClose} />
+
+      {/* Cookie Consent Footer */}
+      <CookiesFooter />
     </>
   );
 };
