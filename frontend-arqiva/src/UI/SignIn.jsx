@@ -12,11 +12,25 @@ const SignIn = ({ show, handleClose }) => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/login', { email, password });
-      alert(response.data.message);
-      handleClose();
-      navigate('/welcome');
+      const response = await axios.post('http://localhost:5000/login', { email, password });
+
+      // Log the response to ensure we have the token
+      console.log(response.data);
+
+      // Assuming the backend sends the token like { "token": "jwt_token_here" }
+      if (response.data.token) {
+        // Store the token in localStorage
+        localStorage.setItem('access_token', response.data.token);
+
+        // Optionally alert the user and navigate to a new page
+        alert('Login successful!');
+        handleClose();  // Close the modal
+        navigate('/welcome');  // Navigate to the protected route
+      } else {
+        setError('Failed to authenticate, please check your credentials.');
+      }
     } catch (err) {
+      console.error('Login error:', err);
       setError('Invalid credentials');
     }
   };
@@ -31,12 +45,22 @@ const SignIn = ({ show, handleClose }) => {
         <Form onSubmit={handleSignIn}>
           <Form.Group controlId="formEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Form.Control 
+              type="email" 
+              placeholder="Enter email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+            />
           </Form.Group>
 
           <Form.Group controlId="formPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Form.Control 
+              type="password" 
+              placeholder="Password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+            />
           </Form.Group>
 
           <Button variant="primary" type="submit" className="w-100">
