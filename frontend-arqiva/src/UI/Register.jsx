@@ -16,7 +16,7 @@ const Register = ({ show, handleClose }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/register', { email, password });
+      const response = await axios.post('http://localhost:5000/register', { email, password });
       alert(response.data.message);
       handleClose();
     } catch (err) {
