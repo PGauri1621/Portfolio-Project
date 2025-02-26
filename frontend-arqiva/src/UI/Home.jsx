@@ -133,8 +133,7 @@ const Home = () => {
 
       {/* Meet Our Team Section */}
       <MeetOurTeam />
-
-      {/* Footer */}
+      
       <Footer />
 
       {/* Sign In Modal */}
