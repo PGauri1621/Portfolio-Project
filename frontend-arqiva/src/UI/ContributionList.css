@@ -12,6 +12,9 @@
     display: flex;
     padding: 20px;
     background-color: #f4f4f4;  /* Soft light gray background */
+    border-radius: 8px;  /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure the logout button is positioned within this container */
 }
 
 /* Left side for the UpComingList component */
@@ -23,6 +26,16 @@
 /* Main content area for the ContributionList and pagination */
 .main-content {
     width: 75%;
+}
+
+/* Styling for the Logout button - position it in the top-right corner */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    z-index: 10;
 }
 
 /* Contribution grid for the cards */

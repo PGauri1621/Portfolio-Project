@@ -5,6 +5,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { FilterProvider } from './UI/ContextManager'; // Import FilterProvider
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

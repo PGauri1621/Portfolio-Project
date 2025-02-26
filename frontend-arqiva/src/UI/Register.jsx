@@ -57,6 +57,3 @@ const Register = ({ show, handleClose }) => {
 };
 
 export default Register;
-
-
-

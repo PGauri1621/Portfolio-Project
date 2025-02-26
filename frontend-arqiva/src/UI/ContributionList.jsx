@@ -6,6 +6,7 @@ import { useFilter } from './ContextManager';
 import UpComingList from './UpComingList';
 import SearchBox from './SearchBox';
 import { useNavigate } from 'react-router-dom';  // import useNavigate from react-router-dom v6
+import LogoutButton from './LogoutButton';  // Import LogoutButton
 
 const ContributionList = () => {
     const [contributions, setContributions] = useState([]);
@@ -16,7 +17,6 @@ const ContributionList = () => {
     const { filters, updateFilters } = useFilter();
     const { searchQuery, selectedStatus } = filters;
 
-    // Replace useHistory with useNavigate
     const navigate = useNavigate();  // using navigate instead of useHistory
 
     // Use useCallback to memoize fetchContributions to avoid re-creations on every render
@@ -41,14 +41,12 @@ const ContributionList = () => {
 
     // Update the URL whenever filters or pagination changes
     useEffect(() => {
-        // Build query string based on filters and pagination
         const queryParams = new URLSearchParams();
         if (searchQuery) queryParams.append('searchQuery', searchQuery);
         if (selectedStatus.length > 0) queryParams.append('status', selectedStatus.join(','));
         queryParams.append('skip', (currentPage - 1) * contributionsPerPage);
         queryParams.append('limit', contributionsPerPage);
 
-        // Update the URL (it will not cause infinite loop due to navigate)
         navigate({ search: queryParams.toString() }); // changed from history.push() to navigate()
     }, [searchQuery, selectedStatus, currentPage, contributionsPerPage, navigate]);
 
@@ -76,6 +74,8 @@ const ContributionList = () => {
             <div className="contribution-list-container">
                 <UpComingList />
                 <div className="main-content">
+                    {/* Logout Button positioned at the top-right */}
+                    <LogoutButton />
                     <SearchBox onSearchFiltersChange={updateFilters} />
                     <div className="contribution-grid">
                         {loading ? <div>Loading...</div> : filteredContributions.map((contribution) => (
