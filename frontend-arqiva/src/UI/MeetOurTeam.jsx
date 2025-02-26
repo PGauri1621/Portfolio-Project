@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import teamMember2Image from '../UI/Photo1.jpg'; // Adjust the path if necessary
-import teamMember1Image from '../UI/Gauri.JPG'; // Adjust the path if necessary
+import teamMember1Image from '../UI/Gauri_1.JPG'; // Adjust the path if necessary
 
 const MeetOurTeam = () => {
   return (

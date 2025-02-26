@@ -18,7 +18,7 @@ const UpComingList = ({ contributions }) => {
             <Card.Body>
                 <h3>Status Filter</h3>
                 <Checkbox.Group
-                    options={['completed', 'active', 'scheduled']}
+                    options={['Completed', 'Active', 'Scheduled']}
                     value={selectedStatus}
                     onChange={handleStatusChange}
                     style={{ display: 'flex', flexDirection: 'column' }}

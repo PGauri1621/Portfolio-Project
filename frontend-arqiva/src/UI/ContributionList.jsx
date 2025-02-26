@@ -7,6 +7,7 @@ import UpComingList from './UpComingList';
 import SearchBox from './SearchBox';
 import { useNavigate } from 'react-router-dom';  // import useNavigate from react-router-dom v6
 import LogoutButton from './LogoutButton';  // Import LogoutButton
+import Header from './Header'; // Import the Header component
 
 const ContributionList = () => {
     const [contributions, setContributions] = useState([]);
@@ -71,11 +72,15 @@ const ContributionList = () => {
 
     return (
         <div className="page-wrapper">
-            <div className="contribution-list-container">
-                <UpComingList />
-                <div className="main-content">
-                    {/* Logout Button positioned at the top-right */}
-                    <LogoutButton />
+            {/* Header component now placed at the top */}
+            <Header />
+            <div className="content-wrapper">
+                {/* Left section with UpcomingList */}
+                <div className="left-side">
+                    <UpComingList />
+                </div>
+                {/* Right section with SearchBox and Contribution List */}
+                <div className="right-side">
                     <SearchBox onSearchFiltersChange={updateFilters} />
                     <div className="contribution-grid">
                         {loading ? <div>Loading...</div> : filteredContributions.map((contribution) => (

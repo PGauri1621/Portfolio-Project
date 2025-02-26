@@ -1,3 +1,9 @@
+
+
+import GooglePlay from '../UI/AP.jpeg'
+import AppStore from '../UI/Google.png'
+
+
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Button, Row, Col } from 'react-bootstrap';
 import SignIn from './SignIn.jsx';
@@ -69,8 +75,6 @@ const Home = () => {
       {/* What We Do Section */}
       <WhatWeDo />
 
-   
-
       {/* Main Content: Container Cards */}
       <div className="home-container">
         <Container className="my-4">
@@ -125,15 +129,30 @@ const Home = () => {
         </Container>
       </div>
 
-         {/* Introducing the Team Section */}
-         <div className="team-introduction">
+      {/* App Store and Google Play Placeholder Section */}
+      <div className="app-store-section">
+        <h3>Download Our App</h3>
+        <div className="app-links">
+          <a href="#" className="app-link">
+            <img src={GooglePlay} alt="Google Play Store" />
+          </a>
+          <a href="#" className="app-link">
+            <img src={AppStore} alt="App Store" />
+          </a>
+        </div>
+        <div className="app-rating">
+          <p className="rating-text">4.5 <span className="star-rating">★ ★ ★ ★ ☆</span></p>
+        </div>
+      </div>
+
+      {/* Introducing the Team Section */}
+      <div className="team-introduction">
         <h2 className="team-title">Team at SuGaR</h2>
         <hr className="team-divider" />
       </div>
 
       {/* Meet Our Team Section */}
       <MeetOurTeam />
-      
       <Footer />
 
       {/* Sign In Modal */}
@@ -149,3 +168,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

@@ -1,6 +1,7 @@
 /* Header styling */
 .header {
     width: 100%;
+    background-color: #343a40;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -8,6 +9,13 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.Welcome-text {
+    text-align: center;
+    text-decoration: wavy;
+    color: aquamarine; /* Set the text color to aquamarine */
+    margin-left: -20px; 
+}
+
 
 .search-box {
     display: flex;
@@ -27,7 +35,7 @@
 }
 
 .search-box input:focus {
-    border-color: #007bff;  /* Primary theme color from home.css */
+    border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
@@ -43,11 +51,11 @@
 }
 
 .search-box button:hover {
-    background-color: #0056b3;  /* Darker blue from home.css */
+    background-color: #0056b3;  /* Darker blue */
     transform: translateY(-2px);
 }
 
 .search-box button:active {
-    background-color: #003d80;  /* Even darker blue from home.css */
+    background-color: #003d80;  /* Even darker blue */
     transform: translateY(0);
 }
