@@ -219,3 +219,117 @@ button.btn-outline-light:hover {
   border-color: #007bff;
   color: white;
 }
+
+/* Google Play and App Store Section */
+.app-store-section {
+  text-align: center;
+  margin: 50px 0;
+  background-color: #f1f1f1;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.app-store-section h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.app-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.app-link img {
+  width: 170px; /* Set a uniform width for both images */
+  height: 50px; /* Set a uniform height */
+  object-fit: contain; /* Maintain aspect ratio and prevent distortion */
+  transition: transform 0.3s ease;
+}
+
+.app-link img:hover {
+  transform: scale(1.1);
+}
+
+.app-rating {
+  margin-top: 20px;
+}
+
+.rating-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.star-rating {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+/* BBC, LBC, ITV Logo Styles */
+.bbc-logo, .lbc-logo, .itv-logo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.bbc-logo {
+  background-color: #000;
+  color: #fff;
+}
+
+.lbc-logo {
+  background-color: #005BAC;
+  color: #fff;
+}
+
+.itv-logo {
+  background-color: #D50032;
+  color: #fff;
+}
+
+.bbc-logo span, .lbc-logo span, .itv-logo span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.bbc-logo img,
+.lbc-logo img,
+.itv-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 40px;
+}
+
+/* Modify ContainerCards to include logos */
+.container-card.bbc .card-header,
+.container-card.lbc .card-header,
+.container-card.itv4 .card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-card.bbc .card-header {
+  background-color: #000;
+  color: #fff;
+}
+
+.container-card.lbc .card-header {
+  background-color: #005BAC;
+  color: #fff;
+}
+
+.container-card.itv4 .card-header {
+  background-color: #D50032;
+  color: #fff;
+}
