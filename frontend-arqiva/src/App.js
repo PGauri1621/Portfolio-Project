@@ -18,9 +18,15 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contributions" element={<ContributionList />} />
         <Route path="/welcome" element={<Welcome />} />
+        
+        {/* Don't need to pass any authentication logic */}
+        <Route 
+          path="/signin" 
+          element={<SignIn show={showSignIn} handleClose={() => setShowSignIn(false)} />} 
+        />
+        
+        <Route path="/register" element={<Register />} />
       </Routes>
-
-     
     </Router>
   );
 };

@@ -33,7 +33,11 @@ const Home = () => {
           <Nav className="nav-center">
             <Nav.Link href="#home">About us</Nav.Link>
             <Nav.Link href="#features">Media</Nav.Link>
-            <Nav.Link as={Link} to="/contributions" className="your-custom-class">Contributions List</Nav.Link> {/* Route to /contribution */}
+            <NavDropdown title="Careers" id="navbar-investors-dropdown" className="nav-dropdown">
+              <NavDropdown.Item href="Job1">Job1</NavDropdown.Item>
+              <NavDropdown.Item href="#Job2">Job2</NavDropdown.Item>
+              <NavDropdown.Item href="#Job3">Job3</NavDropdown.Item>
+            </NavDropdown>
             {/* Dropdown for Investors */}
             <NavDropdown title="Investors" id="navbar-investors-dropdown" className="nav-dropdown">
               <NavDropdown.Item href="#investment1">Investment 1</NavDropdown.Item>
@@ -65,8 +69,7 @@ const Home = () => {
       {/* What We Do Section */}
       <WhatWeDo />
 
-      {/* Meet Our Team Section */}
-      <MeetOurTeam />
+   
 
       {/* Main Content: Container Cards */}
       <div className="home-container">
@@ -122,7 +125,15 @@ const Home = () => {
         </Container>
       </div>
 
-      {/* Footer */}
+         {/* Introducing the Team Section */}
+         <div className="team-introduction">
+        <h2 className="team-title">Team at SuGaR</h2>
+        <hr className="team-divider" />
+      </div>
+
+      {/* Meet Our Team Section */}
+      <MeetOurTeam />
+      
       <Footer />
 
       {/* Sign In Modal */}
