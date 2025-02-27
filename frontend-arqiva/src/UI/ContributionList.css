@@ -1,336 +1,161 @@
 /* Overall page wrapper */
 .page-wrapper {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 /* Header styling */
 .header {
-    width: 100%;
-    background-color: #f4f4f4;  /* Soft light gray background */
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #f4f4f4;  /* Soft light gray background */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Content wrapper styling */
 .content-wrapper {
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;  /* White background to separate content */
+  border-radius: 8px;  /* Rounded corners for a smooth feel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  /* Light shadow to create depth */
 }
 
 /* Left section with UpcomingList (30% of the page width) */
 .left-side {
-    width: 30%;
-    padding-right: 20px;
-    flex-shrink: 0;  /* Ensure the UpcomingList doesn't shrink */
+  width: 30%;
+  padding-right: 20px;
+  flex-shrink: 0;  /* Ensure the UpcomingList doesn't shrink */
 }
 
 /* Right section (SearchBox and Contribution List) */
 .right-side {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Styling for the search box */
 .search-box {
-    margin-bottom: 20px; /* Add space below the search box */
+  margin-bottom: 20px; /* Add space below the search box */
+  background-color: #ffffff;  /* White background for contrast */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 }
 
 /* Contribution grid for the cards - now with 3 cards in a row */
 .contribution-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns */
-    gap: 16px;
-    width: 100%;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns */
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 /* Card styling for individual contributions */
 .contribution-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);  /* Soft gradient effect */
 }
 
 .contribution-card h3 {
-    font-size: 1.2em;
-    color: #c80032;
-    margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #c80032;
+  margin-bottom: 15px;
 }
 
 .contribution-card p {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .contribution-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #fafafa;  /* Slight darkening on hover for interaction feedback */
 }
 
 /* Pagination styling */
 .pagination {
-    margin-top: 20px;
-    display: flex;
-    justify-content: right;
-    gap: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+  gap: 10px;
 }
 
 .pagination .page-item {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .pagination .page-item.active {
-    font-weight: bold;
-    color: #c80032;
+  font-weight: bold;
+  color: #c80032;
 }
 
 /* Responsiveness: Adjust the grid for smaller screens */
 @media (max-width: 900px) {
-    .contribution-grid {
-        grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
-    }
+  .contribution-grid {
+      grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+  }
 }
 
 @media (max-width: 600px) {
-    .contribution-grid {
-        grid-template-columns: 1fr;  /* 1 column on small screens */
-    }
+  .contribution-grid {
+      grid-template-columns: 1fr;  /* 1 column on small screens */
+  }
 }
+
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Navbar Styling */
-  .navbar {
-    background-color: #343a40;
-  }
-  
-  .navbar-brand img {
-    height: 40px;
-  }
-  
-  .navbar-nav .nav-link {
-    color: white !important;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #007bff !important;
-  }
-  
-  .navbar-nav .nav-dropdown .dropdown-item {
-    color: #343a40;
-  }
-  
-  .navbar-nav .nav-dropdown .dropdown-item:hover {
-    color: #007bff;
-  }
-  
-  /* Contribution List Section */
-  .contribution-list-container {
-    padding: 50px 0;
-    background-color: #fff;
-  }
-  
-  .contribution-card {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .contribution-card .card-header {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .contribution-card .card-title {
-    font-size: 1.75rem;
-    color: #007bff;
-  }
-  
-  .contribution-card .card-text {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  .contribution-card .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .contribution-card .btn:hover {
-    background-color: #0056b3;
-    color: white;
-  }
-  
-  /* Team Introduction Section */
-  .team-introduction {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-  
-  .team-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .team-divider {
-    border: 0;
-    height: 2px;
-    background-color: #007bff;
-    width: 60%;
-    margin: 0 auto;
-  }
-  
-  .team-introduction p {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  /* Meet Our Team Section */
-  .meet-our-team {
-    background-color: #f9f9f9;
-    padding: 50px 0;
-  }
-  
-  .meet-our-team h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .team-member {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
-  .team-member h3 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .team-member p {
-    color: #777;
-    font-size: 1rem;
-  }
-  
-  .team-member .social-icons {
-    margin-top: 10px;
-  }
-  
-  .social-icons a {
-    color: #007bff;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  
-  .social-icons a:hover {
-    color: #0056b3;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #343a40;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  footer a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    color: #0056b3;
-  }
-  
-  /* Cookie Footer Styles */
-  .cookies-footer {
-    background-color: #343a40;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.875rem;
-  }
-  
-  .cookies-footer a {
-    color: #007bff;
-  }
-  
-  .cookies-footer a:hover {
-    color: #0056b3;
-  }
-  
-  /* Modal Styles for Sign In / Register */
-  .modal-header {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .modal-footer {
-    background-color: #f8f9fa;
-  }
-  
-  .modal-content {
-    border-radius: 8px;
-  }
-  
-  button.btn-outline-light {
-    border-color: white;
-    color: white;
-  }
-  
-  button.btn-outline-light:hover {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  /* Enhanced visible background with stronger contrast and texture */
+  background-image: linear-gradient(135deg, #f0f4f8, #d0d9e1 25%, #f0f4f8 75%);  /* More visible gradient effect */
+  background-size: 50px 50px;  /* Larger pattern */
+  background-attachment: fixed;  /* Ensure background stays fixed even on scroll */
+  background-position: top left;  /* Consistent placement */
+  background-repeat: repeat;  /* Seamless repeating pattern */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+.navbar-nav .nav-dropdown .dropdown-item {
+  color: #343a40;
+}
+
+.navbar-nav .nav-dropdown .dropdown-item:hover {
+  color: #007bff;
+}

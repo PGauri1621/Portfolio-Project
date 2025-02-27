@@ -5,10 +5,10 @@ import { Checkbox } from 'antd';
 import { useFilter } from './ContextManager';
 import './UpComingList.css';
 
-const UpComingList = ({ contributions }) => {
-    const { filters, updateFilters } = useFilter();
-    const { selectedStatus } = filters;
+const UpComingList = ({ selectedStatus }) => {
+    const { updateFilters } = useFilter();
 
+    // Handle the change of selected status filter
     const handleStatusChange = (checkedValues) => {
         updateFilters({ selectedStatus: checkedValues });
     };

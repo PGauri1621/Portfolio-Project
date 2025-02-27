@@ -9,13 +9,41 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .Welcome-text {
     text-align: center;
     text-decoration: wavy;
-    color: aquamarine; /* Set the text color to aquamarine */
-    margin-left: -20px; 
+    color: #f8f9fa; /* Align text color with the header's theme */
+    margin-left: -40px;  /* Slightly moved towards the left */
+    font-family: 'Roboto', sans-serif; /* Fancy font */
+    font-size: 24px; /* Slightly larger font size */
+    font-weight: 700; /* Bold text */
+    letter-spacing: 2px; /* Increase spacing between letters */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 255, 255, 0.6); /* Glow effect */
+    animation: fadeIn 2s ease-in-out, bounce 1s ease-in-out 1; /* Run bounce effect only once */
 }
 
+/* Animation: Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation: Bounce effect (runs only once on load/refresh) */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
 
 .search-box {
     display: flex;
