@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, Toast } from 'react-bootstrap';  // Import React-Bootstrap components
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from './ContextManager'; // Import the useUser hook
 
 const SignIn = ({ show, handleClose }) => {
   const [email, setEmail] = useState('');
@@ -12,6 +13,9 @@ const SignIn = ({ show, handleClose }) => {
   const [toastType, setToastType] = useState('success'); // 'success' or 'danger' for error
   const [showToast, setShowToast] = useState(false);  // To control visibility of toast
   const navigate = useNavigate();
+
+  // Get setUserData from context
+  const { setUserData } = useUser();  // Access the setUserData function from context
 
   // Handle the form submission
   const handleSignIn = async (e) => {
@@ -29,6 +33,10 @@ const SignIn = ({ show, handleClose }) => {
 
         handleClose();  // Close the modal
         setIsAuthenticated(true);  // Set authenticated state
+        
+        // Set user data after successful login
+        setUserData({ email, name: response.data.name }); // Set the user data in context
+        
         navigate('/contributions');  // Navigate to contributions page
       } else {
         setError('Failed to authenticate, please check your credentials.');
