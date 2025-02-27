@@ -1,3 +1,4 @@
+// src/UI/ContributionList.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Pagination } from 'react-bootstrap';
@@ -6,7 +7,6 @@ import { useFilter } from './ContextManager';
 import UpComingList from './UpComingList';
 import SearchBox from './SearchBox';
 import { useNavigate } from 'react-router-dom';  // import useNavigate from react-router-dom v6
-import LogoutButton from './LogoutButton';  // Import LogoutButton
 import Header from './Header'; // Import the Header component
 
 const ContributionList = () => {
@@ -72,14 +72,12 @@ const ContributionList = () => {
 
     return (
         <div className="page-wrapper">
-            {/* Header component now placed at the top */}
             <Header />
             <div className="content-wrapper">
-                {/* Left section with UpcomingList */}
                 <div className="left-side">
-                    <UpComingList />
+                    {/* Pass selectedStatus to UpComingList component */}
+                    <UpComingList selectedStatus={selectedStatus} />
                 </div>
-                {/* Right section with SearchBox and Contribution List */}
                 <div className="right-side">
                     <SearchBox onSearchFiltersChange={updateFilters} />
                     <div className="contribution-grid">
