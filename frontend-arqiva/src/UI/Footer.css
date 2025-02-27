@@ -35,7 +35,8 @@
 /* Footer Text Styling */
 .footer .contact-info p,
 .footer .legal p,
-.footer .quick-links ul li a {
+.footer .quick-links ul li a,
+.footer .newsletter-column p {
   font-family: 'Roboto', sans-serif;  /* Body font */
   font-size: 1em;
   color: #ddd;  /* Light grey text */
@@ -80,6 +81,65 @@
 .footer .social-icons a:hover {
   color: #007bff;
   transform: scale(1.1);
+}
+
+/* Newsletter Section */
+.newsletter-row {
+  margin-top: 40px;
+}
+
+.newsletter-column {
+  padding-right: 20px;
+}
+
+.newsletter-column h5 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.newsletter-column p {
+  font-size: 1em;
+  color: #ddd;
+}
+
+.newsletter-column .btn {
+  margin-top: 10px;
+}
+
+/* Sitemap Section */
+.sitemap-column h5 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.sitemap-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sitemap-links li {
+  margin-bottom: 8px;
+}
+
+.sitemap-links li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.sitemap-links li a:hover {
+  color: #007bff;
+}
+
+/* Google Maps Placeholder */
+.google-maps-placeholder {
+  margin-top: 20px;
+}
+
+.google-maps-placeholder img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* Copyright Notice */

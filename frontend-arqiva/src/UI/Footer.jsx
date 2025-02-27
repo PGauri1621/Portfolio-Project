@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import './Footer.css'; // Import CSS for styling
 
@@ -60,6 +60,43 @@ const Footer = () => {
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="social-icon" />
               </a>
+            </div>
+          </Col>
+        </Row>
+
+        {/* Newsletter Section */}
+        <Row className="newsletter-row">
+          <Col xs={12} md={6} className="newsletter-column">
+            <h5>Subscribe to Our Newsletter</h5>
+            <p>Get the latest news, updates, and offers from Sugar Media directly to your inbox.</p>
+            <Form action="#">
+              <Form.Group controlId="newsletterEmail">
+                <Form.Control type="email" placeholder="Enter your email" required />
+              </Form.Group>
+              <Button variant="primary" type="submit">Subscribe</Button>
+            </Form>
+          </Col>
+
+          {/* Sitemap Section */}
+          <Col xs={12} md={6} className="sitemap-column">
+            <h5>Sitemap</h5>
+            <ul className="sitemap-links">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+            </ul>
+
+            {/* Google Maps Placeholder Image */}
+            <div className="google-maps-placeholder">
+              <h5>Find Us on Google Maps</h5>
+              <img
+                src="https://via.placeholder.com/600x300.png?text=Google+Maps+Placeholder"
+                alt="Google Maps Placeholder"
+                className="maps-image"
+              />
             </div>
           </Col>
         </Row>
