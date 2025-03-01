@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import './Footer.css'; // Import CSS for styling
+import GoogleMaps from '../UI/Maps.jpg_large';
 
 const Footer = () => {
   return (
@@ -64,36 +65,38 @@ const Footer = () => {
           </Col>
         </Row>
 
-        {/* Newsletter Section */}
-        <Row className="newsletter-row">
-          <Col xs={12} md={6} className="newsletter-column">
-            <h5>Subscribe to Our Newsletter</h5>
-            <p>Get the latest news, updates, and offers from Sugar Media directly to your inbox.</p>
-            <Form action="#">
-              <Form.Group controlId="newsletterEmail">
-                <Form.Control type="email" placeholder="Enter your email" required />
-              </Form.Group>
-              <Button variant="primary" type="submit">Subscribe</Button>
-            </Form>
+        {/* Flexbox for Newsletter, Sitemap, and Google Maps */}
+        <Row className="newsletter-sitemap-google">
+          {/* Newsletter Section */}
+          <Col xs={12} md={4} className="newsletter-column">
+            <div className="newsletter-content">
+              <h5>Subscribe to Our Newsletter</h5>
+              <p>Get the latest news, updates, and offers from Sugar Media directly to your inbox.</p>
+              <Form action="#">
+                <Form.Group controlId="newsletterEmail">
+                  <Form.Control type="email" placeholder="Enter your email" required />
+                </Form.Group>
+                <Button variant="primary" type="submit">Subscribe</Button>
+              </Form>
+            </div>
           </Col>
 
           {/* Sitemap Section */}
-          <Col xs={12} md={6} className="sitemap-column">
+          <Col xs={12} md={4} className="sitemap-column">
             <h5>Sitemap</h5>
             <ul className="sitemap-links">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/Accessibility Help">Accessibility Help</a></li>
               <li><a href="/terms">Terms of Service</a></li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
+          </Col>
 
-            {/* Google Maps Placeholder Image */}
+          {/* Google Maps Section */}
+          <Col xs={12} md={4} className="google-maps-column">
             <div className="google-maps-placeholder">
               <h5>Find Us on Google Maps</h5>
               <img
-                src="https://via.placeholder.com/600x300.png?text=Google+Maps+Placeholder"
+                src={GoogleMaps}
                 alt="Google Maps Placeholder"
                 className="maps-image"
               />

@@ -1,35 +1,30 @@
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500;700&family=Lora:wght@400;600&display=swap');
-
 /* Footer General Styles */
 .footer {
-  background-color: #222;  /* Dark background */
+  background-color: #222;
   color: #fff;
-  padding: 40px 0;  /* Added padding for more breathing space */
-  font-family: 'Roboto', sans-serif;  /* Default body font */
-  border: none !important; /* Ensure no border is applied to the footer */
-  box-shadow: none !important; /* Remove any box-shadow if present */
-  margin-bottom: 0; /* Ensure no bottom margin */
-  border-bottom: none !important; /* Ensure no bottom border */
-  padding-bottom: 40px; /* Ensure enough space for content */
+  padding: 40px 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Update to a modern sans-serif font */
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 40px;
 }
 
 /* Footer Columns */
 .footer-row {
-  margin-bottom: 30px; /* Add spacing between rows */
+  margin-bottom: 30px;
 }
 
-/* Footer Columns */
+/* Footer Column */
 .footer-column {
-  margin-bottom: 30px; /* Space between columns */
+  margin-bottom: 30px;
 }
 
 /* Footer Headings */
 .footer h5 {
-  font-family: 'Montserrat', sans-serif;  /* Heading font */
-  font-weight: 600;  /* Bold font for headings */
-  font-size: 1.2em;
-  margin-bottom: 15px;  /* Spacing below heading */
+  font-family: 'Arial', sans-serif; /* Use Arial for headings */
+  font-weight: 600;
+  font-size: 1.5em; /* Slightly larger font size for headings */
+  margin-bottom: 15px;
 }
 
 /* Footer Text Styling */
@@ -37,16 +32,15 @@
 .footer .legal p,
 .footer .quick-links ul li a,
 .footer .newsletter-column p {
-  font-family: 'Roboto', sans-serif;  /* Body font */
-  font-size: 1em;
-  color: #ddd;  /* Light grey text */
-  line-height: 1.6;  /* Improved readability */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Update to a cleaner sans-serif font */
+  font-size: 1.1em; /* Professional font size for body text */
+  color: #ddd;
+  line-height: 1.6;
 }
 
-/* Paragraph Spacing */
 .footer .contact-info p,
 .footer .legal p {
-  margin-bottom: 10px; /* Spacing between paragraphs */
+  margin-bottom: 10px;
 }
 
 /* Quick Links Styling */
@@ -56,13 +50,12 @@
 }
 
 .footer .quick-links ul li {
-  margin-bottom: 8px;  /* Spacing between list items */
+  margin-bottom: 8px;
 }
 
 .footer .quick-links ul li a {
   color: #ddd;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
 
@@ -83,13 +76,36 @@
   transform: scale(1.1);
 }
 
-/* Newsletter Section */
-.newsletter-row {
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-column {
+    text-align: center;
+  }
+  .footer h5 {
+    font-size: 1.3em; /* Slightly smaller headings on smaller screens */
+  }
+}
+
+/* Flexbox Layout for Newsletter, Sitemap, and Google Maps */
+.newsletter-sitemap-google {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   margin-top: 40px;
+}
+
+.newsletter-column,
+.sitemap-column,
+.google-maps-column {
+  margin-bottom: 20px;
 }
 
 .newsletter-column {
   padding-right: 20px;
+}
+
+.newsletter-column .btn {
+  margin-top: 10px;
 }
 
 .newsletter-column h5 {
@@ -98,15 +114,10 @@
 }
 
 .newsletter-column p {
-  font-size: 1em;
+  font-size: 1.1em;
   color: #ddd;
 }
 
-.newsletter-column .btn {
-  margin-top: 10px;
-}
-
-/* Sitemap Section */
 .sitemap-column h5 {
   font-size: 1.3em;
   font-weight: 600;
@@ -132,7 +143,17 @@
 
 /* Google Maps Placeholder */
 .google-maps-placeholder {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-maps-placeholder h5 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 .google-maps-placeholder img {
@@ -140,22 +161,13 @@
   max-width: 600px;
   height: auto;
   border-radius: 8px;
+  margin-top: 15px;
 }
 
 /* Copyright Notice */
 .footer .copyright {
-  font-family: 'Lora', serif;  /* Elegant font for copyright */
-  font-size: 1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1em; /* Slightly larger than body text */
   opacity: 0.7;
   margin-top: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-column {
-    text-align: center;  /* Center-align content on small screens */
-  }
-  .footer h5 {
-    font-size: 1.1em; /* Slightly smaller headings on small screens */
-  }
 }
