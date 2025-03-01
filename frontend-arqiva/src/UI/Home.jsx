@@ -14,6 +14,7 @@ import CookiesFooter from './CookiesFooter';
 import SuccessStories from './SuccessStories';  // Import SuccessStories component
 import GooglePlay from '../UI/AP.jpeg'
 import AppStore from '../UI/Google.png'
+import BBCLogo from '../UI/bbc_logo.jpg'
 
 const Home = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -30,7 +31,7 @@ const Home = () => {
       {/* Navbar */}
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <Logo />
           </Navbar.Brand>
           <Nav className="nav-center">
@@ -74,13 +75,20 @@ const Home = () => {
         <Container className="my-4">
           <Row xs={1} md={2} lg={2} className="g-4">
             <Col>
-              <ContainerCards header="BBC" title="BBC News" text="This is the content for the BBC card." buttonText="Go somewhere" companyClass="bbc" linkTo="/bbc" />
+            <ContainerCards 
+                header="BBC"
+                title="Trending news videos..."
+                text="England's Champions Trophy ends in sorry defeat."
+                buttonText="Go somewhere"
+                companyClass="bbc"
+              />
             </Col>
             <Col>
-              <ContainerCards header="LBC Radio" title="LBC News" text="This is the content for the LBC Radio card." buttonText="Go somewhere" companyClass="lbc" linkTo="/lbc" />
+              <ContainerCards header="LBC" title="Streaming interview with PM" text="Zelenskyy to meet King Charles as Starmer shows support for Ukrainian leader after White House disaster
+." buttonText="Go somewhere" companyClass="lbc" linkTo="/lbc" />
             </Col>
             <Col>
-              <ContainerCards header="ITV4" title="ITV4 Channel" text="Content for ITV4." buttonText="Go somewhere" companyClass="itv4" linkTo="/itv4" />
+              <ContainerCards header="ITV4" title="Watch oscar live stream" text="5. Oscars Special (2025) - Jonathan Ross introduces some Oscar-winning and nominated films available to watch on ITV." buttonText="Go somewhere" companyClass="itv4" linkTo="/itv4" />
             </Col>
             <Col>
               <ContainerCards header="Explore" title="Excited to be part of our journey?" text="SignIn/Register to be part of our journey!" buttonText="Find out more" companyClass="other" />

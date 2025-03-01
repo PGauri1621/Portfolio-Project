@@ -1,21 +1,18 @@
+
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
-
-const ContainerCards = ({ header, title, text, buttonText, companyClass, linkTo }) => {
+import Button from 'react-bootstrap/Button';
+import ContributionList from './ContributionList';
+const ContainerCards = ({ header, title, text, buttonText, companyClass }) => {
   return (
     <Card>
       <Card.Header className={companyClass}>{header}</Card.Header>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
-        {/* Render the Link component around the button */}
-        <Link to={linkTo}>
-          <button className="btn btn-primary">{buttonText}</button>
-        </Link>
+        <Button variant="primary">{buttonText}</Button>
       </Card.Body>
     </Card>
   );
 };
-
 export default ContainerCards;
