@@ -41,7 +41,5 @@
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Darker shadow on hover for depth */
   }
   
-  .logo-container:hover .r-media {
-    background: linear-gradient(90deg, rgba(255,0,255,1) 0%, rgba(255,165,0,1) 100%); /* Gradient shift on hover */
-  }
+  
   

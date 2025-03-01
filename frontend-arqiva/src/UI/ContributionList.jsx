@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Pagination } from 'react-bootstrap';
 import './ContributionList.css';
 import { useFilter } from './ContextManager';
-import UpComingList from './UpComingList';
 import SearchBox from './SearchBox';
 import { useNavigate } from 'react-router-dom';  // import useNavigate from react-router-dom v6
 import Header from './Header'; // Import the Header component
@@ -74,10 +73,6 @@ const ContributionList = () => {
         <div className="page-wrapper">
             <Header />
             <div className="content-wrapper">
-                <div className="left-side">
-                    {/* Pass selectedStatus to UpComingList component */}
-                    <UpComingList selectedStatus={selectedStatus} />
-                </div>
                 <div className="right-side">
                     <SearchBox onSearchFiltersChange={updateFilters} />
                     <div className="contribution-grid">

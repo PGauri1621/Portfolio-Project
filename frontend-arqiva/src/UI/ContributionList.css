@@ -29,16 +29,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  /* Light shadow to create depth */
 }
 
-/* Left section with UpcomingList (30% of the page width) */
-.left-side {
-  width: 30%;
-  padding-right: 20px;
-  flex-shrink: 0;  /* Ensure the UpcomingList doesn't shrink */
-}
-
 /* Right section (SearchBox and Contribution List) */
 .right-side {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -56,7 +49,7 @@
 /* Contribution grid for the cards - now with 3 cards in a row */
 .contribution-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns */
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns on desktop */
   gap: 16px;
   width: 100%;
   margin-top: 20px;
@@ -95,7 +88,7 @@
 .pagination {
   margin-top: 20px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -109,15 +102,25 @@
 }
 
 /* Responsiveness: Adjust the grid for smaller screens */
-@media (max-width: 900px) {
+
+/* For desktop (default) */
+@media (min-width: 1200px) {
   .contribution-grid {
-      grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns on large screens */
   }
 }
 
-@media (max-width: 600px) {
+/* For tablet screens (between 768px and 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
   .contribution-grid {
-      grid-template-columns: 1fr;  /* 1 column on small screens */
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on tablets */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .contribution-grid {
+    grid-template-columns: 1fr;  /* 1 column on mobile */
   }
 }
 
