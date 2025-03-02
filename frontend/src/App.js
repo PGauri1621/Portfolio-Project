@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './UI/Home.jsx';
-import ContributionList from './UI/ContributionList.jsx';
-import SignIn from './UI/SignIn.jsx';
-import Register from './UI/Register.jsx';
+import Home from './UI/Home/Home.jsx';
+import ContributionList from './UI/ContributionList/ContributionList.jsx';
+import SignIn from './UI/SignIn/SignIn.jsx';
+import Register from './UI/Register/Register.jsx';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

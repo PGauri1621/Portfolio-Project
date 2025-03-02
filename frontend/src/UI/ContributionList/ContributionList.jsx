@@ -3,10 +3,10 @@ import axios from 'axios';
 import { Pagination } from 'react-bootstrap';
 import { Tag } from '@blueprintjs/core'; 
 import './ContributionList.css';
-import { useFilter } from './ContextManager';
-import SearchBox from './SearchBox';
+import { useFilter } from '../ContextManager/ContextManager';
+import SearchBox from '../SearchBox/SearchBox';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
+import Header from '../Header/Header';
 
 const ContributionList = () => {
     const [contributions, setContributions] = useState([]);

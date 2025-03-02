@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Button, Row, Col } from 'react-bootstrap';
-import SignIn from './SignIn.jsx';
-import Register from './Register.jsx';
-import ContainerCards from './ContainerCards';
-import Footer from './Footer';
-import Logo from './Logo';
+import SignIn from '../SignIn/SignIn.jsx';
+import Register from '../Register/Register.jsx';
+import ContainerCards from '../ContainerCards/ContainerCards.jsx';
+import Footer from '../Footer/Footer.jsx';
+import Logo from '../Logo/Logo.jsx';
 import './Home.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import WhatWeDo from './WhatWeDo.jsx';
-import MeetOurTeam from './MeetOurTeam.jsx';
-import CookiesFooter from './CookiesFooter';
-import SuccessStories from './SuccessStories'; 
-import GooglePlay from '../UI/AP.jpeg'
-import AppStore from '../UI/Google.png'
+import WhatWeDo from '../WhatWeDo/WhatWeDo.jsx';
+import MeetOurTeam from '../MeetOurTeam/MeetOurTeam.jsx';
+import CookiesFooter from '../CookiesFooter/CookiesFooter.jsx';
+import SuccessStories from '../SuccessStories/SuccessStories.jsx'; 
+import GooglePlay from '../Home/AP.jpeg'
+import AppStore from '../../UI/Google.png'
 
 const Home = () => {
   const [showSignIn, setShowSignIn] = useState(false);

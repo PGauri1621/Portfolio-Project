@@ -2,7 +2,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import ContributionList from './ContributionList';
 const ContainerCards = ({ header, title, text, buttonText, companyClass }) => {
   return (
     <Card>

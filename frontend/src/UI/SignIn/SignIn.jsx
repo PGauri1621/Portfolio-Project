@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, Toast } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from './ContextManager';
+import { useUser } from '../ContextManager/ContextManager';
 
 const SignIn = ({ show, handleClose }) => {
   const [email, setEmail] = useState('');

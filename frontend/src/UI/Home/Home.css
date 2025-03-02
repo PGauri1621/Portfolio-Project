@@ -41,10 +41,7 @@ body {
   padding: 50px 0;
   background-color: #fff;
 }
-.home-container-bbc-logo
-{
-  background-image:  url('../UI/bbc_logo.jpg');;
-}
+
 
 .container-card {
   background-color: #f1f1f1;
@@ -276,21 +273,21 @@ button.btn-outline-light:hover {
 .card-header.bbc {
   font-family: 'Roboto', sans-serif;  
   background-color: #f4f4f4;  
-  background-image:  url('../UI/bbc_logo.jpg');
+  background-image:  url('../Home/bbc_logo.jpg');
   background-size: cover;
   background-position: center;
 }
 .card-header.lbc {
   font-family: 'Roboto', sans-serif; 
   background-color: #f4f4f4;  
-  background-image:  url('../UI/lbc logo.png');
+  background-image:  url('../Home/lbc logo.png');
   background-size: cover;
   background-position: center;
 }
 .card-header.itv4 {
   font-family: 'Roboto', sans-serif;  
   background-color: #f4f4f4; 
-  background-image:  url('../UI/itv logo.png');
+  background-image:  url('../Home/itv logo.png');
   background-size: cover;
   background-position: center;
 }
