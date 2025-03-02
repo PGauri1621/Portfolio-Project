@@ -3,7 +3,7 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
+  background-color: rgba(0, 255, 238, 0.6);
 }
 
 .container {
@@ -40,6 +40,10 @@ body {
 .home-container {
   padding: 50px 0;
   background-color: #fff;
+}
+.home-container-bbc-logo
+{
+  background-image:  url('../UI/bbc_logo.jpg');;
 }
 
 .container-card {
@@ -269,59 +273,26 @@ button.btn-outline-light:hover {
   font-size: 1.2rem;
 }
 
-/* BBC, LBC, ITV Logo Styles */
-.bbc-logo, .lbc-logo, .itv-logo {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 20px;
-  border-radius: 5px;
+.card-header.bbc {
+  font-family: 'Roboto', sans-serif;  /* BBC-like font */
+  background-color: #f4f4f4;  /* Light grey background */
+  background-image:  url('../UI/bbc_logo.jpg'); ;  /* BBC Image */
+  background-size: cover;
+  background-position: center;
 }
-
-.bbc-logo {
-  background-color: #000;
-  color: #fff;
+.card-header.lbc {
+  font-family: 'Roboto', sans-serif;  /* BBC-like font */
+  background-color: #f4f4f4;  /* Light grey background */
+  background-image:  url('../UI/lbc logo.png'); ;  /* BBC Image */
+  background-size: cover;
+  background-position: center;
 }
-
-.lbc-logo {
-  background-color: #005BAC;
-  color: #fff;
-}
-
-.itv-logo {
-  background-color: #D50032;
-  color: #fff;
-}
-
-.bbc-logo span, .lbc-logo span, .itv-logo span {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #fff;
-}
-
-.bbc-logo img,
-.lbc-logo img,
-.itv-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 40px;
-}
-
-/* Modify ContainerCards to include logos */
-.container-card.bbc .card-header,
-.container-card.lbc .card-header,
-.container-card.itv4 .card-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.container-card.bbc .card-header {
-  background-color: #000;
-  color: #fff;
+.card-header.itv4 {
+  font-family: 'Roboto', sans-serif;  /* BBC-like font */
+  background-color: #f4f4f4;  /* Light grey background */
+  background-image:  url('../UI/itv logo.png'); ;  /* BBC Image */
+  background-size: cover;
+  background-position: center;
 }
 
 .container-card.lbc .card-header {
@@ -337,7 +308,7 @@ button.btn-outline-light:hover {
 /* Success Stories Section */
 .success-stories {
   padding: 60px 0;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0.2)), 
+  background: linear-gradient(135deg, rgba(0, 255, 238, 0.6), rgba(0, 255, 238, 0.6)), 
               radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2) 50%), 
               repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.15) 10%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 30%);
   background-size: cover, cover, 50px 50px;
@@ -362,7 +333,7 @@ button.btn-outline-light:hover {
 }
 
 .success-stories .section-title:hover {
-  color: #007bff;
+  color:#ff3366;
   text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.8);
 }
 
@@ -411,6 +382,12 @@ button.btn-outline-light:hover {
   font-size: 1.2rem;
   color: #444444;
   font-weight: bold;
+}
+.success-stories .carousel-card .blockquote-footer-footer {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Quote Section Below the Carousel */
