@@ -1,16 +1,16 @@
-// src/Logo.jsx
+
 import React from 'react';
-import { FaPlayCircle } from 'react-icons/fa';  // Media related icon
-import './Logo.css';  // We'll style the logo in a separate CSS file
+import { FaPlayCircle } from 'react-icons/fa'; 
+import './Logo.css'; 
 
 const Logo = () => {
   return (
     <div className="logo-container">
       <div className="logo-icon">
-        <FaPlayCircle />  {/* Play button icon */}
+        <FaPlayCircle /> 
       </div>
       <div className="logo-text">
-        <span className="sugar">SuGa</span><span className="r-media">R Media</span>  {/* Split the text for creative styling */}
+        <span className="sugar">SuGa</span><span className="r-media">R Media</span>
       </div>
     </div>
   );

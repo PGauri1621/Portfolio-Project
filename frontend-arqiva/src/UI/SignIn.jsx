@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form, Toast } from 'react-bootstrap';  // Import React-Bootstrap components
+import { Modal, Button, Form, Toast } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from './ContextManager'; // Import the useUser hook
+import { useUser } from './ContextManager';
 
 const SignIn = ({ show, handleClose }) => {
   const [email, setEmail] = useState('');
@@ -10,12 +10,12 @@ const SignIn = ({ show, handleClose }) => {
   const [error, setError] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-  const [toastType, setToastType] = useState('success'); // 'success' or 'danger' for error
-  const [showToast, setShowToast] = useState(false);  // To control visibility of toast
+  const [toastType, setToastType] = useState('success'); 
+  const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
 
   // Get setUserData from context
-  const { setUserData } = useUser();  // Access the setUserData function from context
+  const { setUserData } = useUser(); 
 
   // Handle the form submission
   const handleSignIn = async (e) => {
@@ -29,40 +29,37 @@ const SignIn = ({ show, handleClose }) => {
         // Successful login, show success toast
         setToastMessage('Login successful!');
         setToastType('success');
-        setShowToast(true); // Show toast
+        setShowToast(true);
 
-        handleClose();  // Close the modal
+        handleClose();  
         setIsAuthenticated(true);  // Set authenticated state
         
         // Set user data after successful login
-        setUserData({ email, name: response.data.name }); // Set the user data in context
+        setUserData({ email, name: response.data.name }); 
         
-        navigate('/contributions');  // Navigate to contributions page
+        navigate('/contributions'); 
       } else {
         setError('Failed to authenticate, please check your credentials.');
-        // Show error toast
         setToastMessage('Failed to authenticate, please check your credentials.');
         setToastType('danger');
-        setShowToast(true); // Show toast
+        setShowToast(true);
       }
     } catch (err) {
       console.error('Login error:', err);
       setError('Invalid credentials');
-      // Show error toast for invalid credentials
       setToastMessage('Invalid credentials');
       setToastType('danger');
-      setShowToast(true); // Show toast
+      setShowToast(true); 
     }
   };
 
   // Handle the "Forgot Password?" click
   const handleForgotPassword = () => {
-    navigate('/forgot-password');  // Replace with your actual forgot-password page or modal
+    navigate('/forgot-password');  // Replace with your actual forgot-password page or modal - TODO
   };
 
   return (
     <div>
-      {/* React-Bootstrap Toast Notification */}
       <Toast
         onClose={() => setShowToast(false)}
         show={showToast}
@@ -106,7 +103,6 @@ const SignIn = ({ show, handleClose }) => {
             </Button>
           </Form>
 
-          {/* Forgot Password Link */}
           <div className="text-center mt-3">
             <Button variant="link" onClick={handleForgotPassword} style={{ padding: 0 }}>
               Forgot Password?

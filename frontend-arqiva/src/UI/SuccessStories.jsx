@@ -7,7 +7,6 @@ const SuccessStories = () => {
       <h2 className="section-title">Our Success Stories</h2>
 
       <Carousel controls={true} indicators={true} fade>
-        {/* First Item */}
         <Carousel.Item>
           <div className="carousel-card">
             <h3 className="card-title">BBC's Story</h3>
@@ -16,7 +15,6 @@ const SuccessStories = () => {
           </div>
         </Carousel.Item> 
 
-        {/* Second Item */}
         <Carousel.Item>
           <div className="carousel-card">
             <h3 className="card-title">LBC Radio's Journey</h3>
@@ -25,7 +23,6 @@ const SuccessStories = () => {
           </div>
         </Carousel.Item>
 
-        {/* Third Item */}
         <Carousel.Item>
           <div className="carousel-card">
             <h3 className="card-title">ITV4's Achievement</h3>
@@ -34,7 +31,6 @@ const SuccessStories = () => {
           </div>
         </Carousel.Item>
 
-        {/* Fourth Item */}
         <Carousel.Item>
           <div className="carousel-card">
             <h3 className="card-title">Company A's Growth</h3>
@@ -43,7 +39,6 @@ const SuccessStories = () => {
           </div>
         </Carousel.Item>
 
-        {/* Fifth Item */}
         <Carousel.Item>
           <div className="carousel-card">
             <h3 className="card-title">Company B's Transformation</h3>
@@ -52,7 +47,6 @@ const SuccessStories = () => {
           </div>
         </Carousel.Item>
 
-        {/* Sixth Item */}
         <Carousel.Item>
           <div className="carousel-card">
             <h3 className="card-title">Company C's Expansion</h3>

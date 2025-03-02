@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import './Footer.css'; // Import CSS for styling
+import './Footer.css'; 
 import GoogleMaps from '../UI/Maps.jpg_large';
 
 const Footer = () => {
@@ -65,9 +65,7 @@ const Footer = () => {
           </Col>
         </Row>
 
-        {/* Flexbox for Newsletter, Sitemap, and Google Maps */}
         <Row className="newsletter-sitemap-google">
-          {/* Newsletter Section */}
           <Col xs={12} md={4} className="newsletter-column">
             <div className="newsletter-content">
               <h5>Subscribe to Our Newsletter</h5>
@@ -81,7 +79,6 @@ const Footer = () => {
             </div>
           </Col>
 
-          {/* Sitemap Section */}
           <Col xs={12} md={4} className="sitemap-column">
             <h5>Sitemap</h5>
             <ul className="sitemap-links">
@@ -91,7 +88,6 @@ const Footer = () => {
             </ul>
           </Col>
 
-          {/* Google Maps Section */}
           <Col xs={12} md={4} className="google-maps-column">
             <div className="google-maps-placeholder">
               <h5>Find Us on Google Maps</h5>

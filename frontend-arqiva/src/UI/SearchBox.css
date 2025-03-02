@@ -1,4 +1,4 @@
-/* Header styling */
+
 .header {
     width: 100%;
     padding: 20px 40px;
@@ -23,18 +23,18 @@
     border-radius: 5px;
     border: 1px solid #ddd;
     box-sizing: border-box;
-    background-color: #fff;  /* Light background */
+    background-color: #fff;  
 }
 
 .search-box input:focus {
-    border-color: #007bff;  /* Primary theme color from home.css */
+    border-color: #007bff;  
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
 .search-box button {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #007bff;  /* Primary theme color */
+    background-color: #007bff; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -43,11 +43,11 @@
 }
 
 .search-box button:hover {
-    background-color: #0056b3;  /* Darker blue from home.css */
+    background-color: #0056b3;  
     transform: translateY(-2px);
 }
 
 .search-box button:active {
-    background-color: #003d80;  /* Even darker blue from home.css */
+    background-color: #003d80;  
     transform: translateY(0);
 }

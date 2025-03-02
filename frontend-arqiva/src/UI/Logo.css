@@ -1,30 +1,30 @@
-/* src/Logo.css */
+
 .logo-container {
     display: flex;
     align-items: center;
-    font-family: 'Raleway', sans-serif;  /* Sleek and modern font */
+    font-family: 'Raleway', sans-serif; 
     color: white;
   }
   
   .logo-icon {
-    font-size: 3rem;  /* Increase icon size for emphasis */
+    font-size: 3rem; 
     margin-right: 10px;
-    color: #ff3366;  /* Media red color */
-    transition: transform 0.3s ease; /* Animation effect */
+    color: #ff3366;  
+    transition: transform 0.3s ease;
   }
   
   .logo-icon:hover {
-    transform: rotate(360deg);  /* Add a spinning effect when hovered */
+    transform: rotate(360deg); 
   }
   
   .logo-text {
-    font-size: 2rem;  /* Adjust font size for text */
+    font-size: 2rem; 
     font-weight: 700;
     display: flex;
   }
   
   .sugar {
-    color: #ff3366;  /* Make 'Suga' stand out with bold red */
+    color: #ff3366; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     letter-spacing: 2px;
   }
@@ -38,7 +38,7 @@
   }
   
   .logo-container:hover .sugar {
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Darker shadow on hover for depth */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); 
   }
   
   

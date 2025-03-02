@@ -248,9 +248,9 @@ button.btn-outline-light:hover {
 }
 
 .app-link img {
-  width: 170px; /* Set a uniform width for both images */
-  height: 50px; /* Set a uniform height */
-  object-fit: contain; /* Maintain aspect ratio and prevent distortion */
+  width: 170px; 
+  height: 50px;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
@@ -274,23 +274,23 @@ button.btn-outline-light:hover {
 }
 
 .card-header.bbc {
-  font-family: 'Roboto', sans-serif;  /* BBC-like font */
-  background-color: #f4f4f4;  /* Light grey background */
-  background-image:  url('../UI/bbc_logo.jpg'); ;  /* BBC Image */
+  font-family: 'Roboto', sans-serif;  
+  background-color: #f4f4f4;  
+  background-image:  url('../UI/bbc_logo.jpg');
   background-size: cover;
   background-position: center;
 }
 .card-header.lbc {
-  font-family: 'Roboto', sans-serif;  /* BBC-like font */
-  background-color: #f4f4f4;  /* Light grey background */
-  background-image:  url('../UI/lbc logo.png'); ;  /* BBC Image */
+  font-family: 'Roboto', sans-serif; 
+  background-color: #f4f4f4;  
+  background-image:  url('../UI/lbc logo.png');
   background-size: cover;
   background-position: center;
 }
 .card-header.itv4 {
-  font-family: 'Roboto', sans-serif;  /* BBC-like font */
-  background-color: #f4f4f4;  /* Light grey background */
-  background-image:  url('../UI/itv logo.png'); ;  /* BBC Image */
+  font-family: 'Roboto', sans-serif;  
+  background-color: #f4f4f4; 
+  background-image:  url('../UI/itv logo.png');
   background-size: cover;
   background-position: center;
 }
