@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Pagination } from 'react-bootstrap';
-import { Tag } from '@blueprintjs/core'; // Import Tag from BlueprintJS
+import { Tag } from '@blueprintjs/core'; 
 import './ContributionList.css';
 import { useFilter } from './ContextManager';
 import SearchBox from './SearchBox';
@@ -82,7 +82,6 @@ const ContributionList = () => {
 
     const filteredContributions = filterContributionsByStatus(contributions);
 
-    // Map status to BlueprintJS Tag color
     const statusColor = (status) => {
         switch (status) {
             case 'Completed':

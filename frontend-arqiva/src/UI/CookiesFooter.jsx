@@ -25,7 +25,7 @@ const Cookies = () => {
   };
 
   if (isCookieAccepted || isCookieRejected) {
-    return null; // If cookies are accepted or rejected, hide the cookie notification
+    return null; 
   }
 
   return (

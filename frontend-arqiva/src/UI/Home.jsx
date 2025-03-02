@@ -9,12 +9,10 @@ import './Home.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import WhatWeDo from './WhatWeDo.jsx';
 import MeetOurTeam from './MeetOurTeam.jsx';
-import { Link } from 'react-router-dom';
 import CookiesFooter from './CookiesFooter';
-import SuccessStories from './SuccessStories';  // Import SuccessStories component
+import SuccessStories from './SuccessStories'; 
 import GooglePlay from '../UI/AP.jpeg'
 import AppStore from '../UI/Google.png'
-import BBCLogo from '../UI/bbc_logo.jpg'
 
 const Home = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -64,10 +62,7 @@ const Home = () => {
         </Container>
       </Navbar>
 
-      {/* What We Do Section */}
       <WhatWeDo />
-
-    
 
       {/* Main Content: Container Cards */}
       <div className="home-container">
@@ -96,7 +91,7 @@ const Home = () => {
         </Container>
       </div>
 
-      <SuccessStories />  {/* Insert Success Stories here */}
+      <SuccessStories />  
 
       {/* App Store and Google Play Placeholder Section */}
       <div className="app-store-section">

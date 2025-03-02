@@ -9,10 +9,9 @@ import pytz
 
 app = Flask(__name__)
 
-# Allow only specific origins for security
 CORS(app, origins="http://localhost:3000")  # Allow only the frontend URL
 
-# Simple store of data for this exercise
+
 DATA = {}
 
 # Load data from JSON file
@@ -21,7 +20,6 @@ def load_data():
     with open('seed_data/contributions.json') as f:
         DATA['contribution_data'] = json.load(f)['contributions']
 
-# Load data on startup
 load_data()
 
 @app.route('/')
@@ -69,9 +67,9 @@ def list_contributions():
     order_by = request.args.get('order_by', 'id')
     contributions = sorted(contributions, key=lambda c: c.get(order_by, ''))
 
-    # Pagination: Ensure skip and limit are integers
+    # Pagination
     skip = int(request.args.get('skip', 0))  # Default to 0 if not provided
-    limit = int(request.args.get('limit', 30))  # Default to 30 if not provided
+    limit = int(request.args.get('limit', 30))  
     paginated_contributions = contributions[skip: skip + limit]
 
     return jsonify({
@@ -81,7 +79,7 @@ def list_contributions():
         "limit": limit
     })
 
-# User registration and login (2nd part of your app)
+# User registration and login
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -115,14 +113,14 @@ def register():
     if existing_user:
         return jsonify({'message': 'User already exists'}), 400
 
-    # Create new user without password hashing (no security)
+    # Create new user without password hashing 
     new_user = User(email=email, password=password, name=name, address=address, phone_number=phone_number)
     db.session.add(new_user)
     db.session.commit()
 
     return jsonify({'message': 'User registered successfully'}), 201
 
-# Route for logging in the user (no password check)
+# Route for logging in the user
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -144,6 +142,5 @@ def login():
         'phone_number': user.phone_number
     })
 
-# Run the app
 if __name__ == '__main__':
     app.run(debug=True)

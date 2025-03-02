@@ -1,9 +1,9 @@
-/* Footer General Styles */
+
 .footer {
   background-color: #222;
   color: #fff;
   padding: 40px 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Update to a modern sans-serif font */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
   border-bottom: none;
   padding-bottom: 40px;
@@ -21,9 +21,9 @@
 
 /* Footer Headings */
 .footer h5 {
-  font-family: 'Arial', sans-serif; /* Use Arial for headings */
+  font-family: 'Arial', sans-serif;
   font-weight: 600;
-  font-size: 1.5em; /* Slightly larger font size for headings */
+  font-size: 1.5em; 
   margin-bottom: 15px;
 }
 
@@ -32,8 +32,8 @@
 .footer .legal p,
 .footer .quick-links ul li a,
 .footer .newsletter-column p {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Update to a cleaner sans-serif font */
-  font-size: 1.1em; /* Professional font size for body text */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-size: 1.1em; 
   color: #ddd;
   line-height: 1.6;
 }
@@ -82,15 +82,14 @@
     text-align: center;
   }
   .footer h5 {
-    font-size: 1.3em; /* Slightly smaller headings on smaller screens */
+    font-size: 1.3em; 
   }
 }
 
-/* Flexbox Layout for Newsletter, Sitemap, and Google Maps */
 .newsletter-sitemap-google {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  flex-wrap: wrap; 
   margin-top: 40px;
 }
 
@@ -164,10 +163,10 @@
   margin-top: 15px;
 }
 
-/* Copyright Notice */
+
 .footer .copyright {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.1em; /* Slightly larger than body text */
+  font-size: 1.1em; 
   opacity: 0.7;
   margin-top: 20px;
 }

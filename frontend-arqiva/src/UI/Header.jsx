@@ -1,12 +1,11 @@
 import React from 'react';
-import LogoutButton from './LogoutButton'; // Import LogoutButton
+import LogoutButton from './LogoutButton';
 import './Header.css';
-import { Navbar, Nav, Container, Button, Row, Col } from 'react-bootstrap';
-import Logo from './Logo';  // Import Logo Component
-import { useUser } from './ContextManager'; // Import the useUser hook to get user data
+import { Navbar} from 'react-bootstrap';
+import Logo from './Logo'; 
+import { useUser } from './ContextManager';
 
 const Header = () => {
-  // Get the logged-in user data from context
   const { userData } = useUser(); 
 
   return (
@@ -14,9 +13,7 @@ const Header = () => {
       <Navbar.Brand>
         <Logo />
       </Navbar.Brand>
-      {/* Display the user's name or a placeholder */}
       <h3 className='Welcome-text'>Welcome, {userData ? userData.name : 'Guest'}!</h3>
-      {/* Logout Button positioned at the top-right */}
       <LogoutButton />
     </div>
   );
