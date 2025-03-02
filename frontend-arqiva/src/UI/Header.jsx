@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand>
         <Logo />
       </Navbar.Brand>
       {/* Display the user's name or a placeholder */}

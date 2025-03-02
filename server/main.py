@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+import pytz
 
 app = Flask(__name__)
 
@@ -28,9 +29,10 @@ def root():
     return jsonify({"message": "Arqiva Tech Test 1 - Good Luck!"})
 
 def parse_datetime(date_str):
-    """Utility function to parse a datetime string into a datetime object."""
+    """Utility function to parse a datetime string into a timezone-aware datetime object."""
     try:
-        return datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        # Parsing datetime from the string and converting to UTC
+        return datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=pytz.UTC)
     except ValueError:
         return None
 
@@ -39,6 +41,7 @@ def list_contributions():
     contributions = DATA['contribution_data']
     search_query = request.args.get('searchQuery', '').lower()
 
+    # Search filter
     if search_query:
         contributions = [c for c in contributions if (
             search_query in c['title'].lower() or
@@ -59,6 +62,7 @@ def list_contributions():
                 comparator = (lambda c: parse_datetime(c[key]) < value_dt) if 'Before' in f else (lambda c: parse_datetime(c[key]) > value_dt)
                 contributions = [c for c in contributions if comparator(c)]
             else:
+                # Regular string search
                 contributions = [c for c in contributions if re.search(value, c[f], re.IGNORECASE)]
 
     # Sorting logic
@@ -139,8 +143,6 @@ def login():
         'address': user.address,
         'phone_number': user.phone_number
     })
-
-
 
 # Run the app
 if __name__ == '__main__':

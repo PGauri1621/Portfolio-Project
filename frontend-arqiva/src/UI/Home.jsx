@@ -67,7 +67,7 @@ const Home = () => {
       {/* What We Do Section */}
       <WhatWeDo />
 
-      <SuccessStories />  {/* Insert Success Stories here */}
+    
 
       {/* Main Content: Container Cards */}
       <div className="home-container">
@@ -77,7 +77,7 @@ const Home = () => {
             <ContainerCards 
                 header="BBC"
                 title="Trending news videos..."
-                text="England's Champions Trophy ends in sorry defeat."
+                text="England's Champions Trophy ends in sorry defeat.Stay tune for more updates in our live news reporting this evening."
                 buttonText="Go somewhere"
                 companyClass="bbc"
               />
@@ -90,11 +90,13 @@ const Home = () => {
               <ContainerCards header="ITV4" title="Watch oscar live stream" text="5. Oscars Special (2025) - Jonathan Ross introduces some Oscar-winning and nominated films available to watch on ITV." buttonText="Go somewhere" companyClass="itv4" linkTo="/itv4" />
             </Col>
             <Col>
-              <ContainerCards header="Explore" title="Excited to be part of our journey?" text="SignIn/Register to be part of our journey!" buttonText="Find out more" companyClass="other" />
+              <ContainerCards header="Explore" title="Excited to be part of our journey?" text="SignIn/Register to be part of our journey and be a valuable member! We have amazing content from our top customers." buttonText="Find out more" companyClass="other" />
             </Col>
           </Row>
         </Container>
       </div>
+
+      <SuccessStories />  {/* Insert Success Stories here */}
 
       {/* App Store and Google Play Placeholder Section */}
       <div className="app-store-section">
