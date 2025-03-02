@@ -10,7 +10,7 @@ const Logo = () => {
         <FaPlayCircle />  {/* Play button icon */}
       </div>
       <div className="logo-text">
-        <span className="sugar">Suga</span><span className="r-media">R Media</span>  {/* Split the text for creative styling */}
+        <span className="sugar">SuGa</span><span className="r-media">R Media</span>  {/* Split the text for creative styling */}
       </div>
     </div>
   );

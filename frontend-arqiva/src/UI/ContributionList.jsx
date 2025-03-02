@@ -1,12 +1,12 @@
-// src/UI/ContributionList.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Pagination } from 'react-bootstrap';
+import { Tag } from '@blueprintjs/core'; // Import Tag from BlueprintJS
 import './ContributionList.css';
 import { useFilter } from './ContextManager';
 import SearchBox from './SearchBox';
-import { useNavigate } from 'react-router-dom';  // import useNavigate from react-router-dom v6
-import Header from './Header'; // Import the Header component
+import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const ContributionList = () => {
     const [contributions, setContributions] = useState([]);
@@ -17,17 +17,31 @@ const ContributionList = () => {
     const { filters, updateFilters } = useFilter();
     const { searchQuery, selectedStatus } = filters;
 
-    const navigate = useNavigate();  // using navigate instead of useHistory
+    const navigate = useNavigate();
 
-    // Use useCallback to memoize fetchContributions to avoid re-creations on every render
+    const currentDateTime = new Date();
+
+    const getStatus = (startTime, endTime) => {
+        const start = new Date(startTime);
+        const end = new Date(endTime);
+
+        if (end < currentDateTime) {
+            return 'Completed';
+        } else if (start <= currentDateTime && end >= currentDateTime) {
+            return 'Active';
+        } else {
+            return 'Scheduled';
+        }
+    };
+
     const fetchContributions = useCallback(async () => {
         try {
             setLoading(true);
             const params = {
-                skip: (currentPage - 1) * contributionsPerPage,  // Calculate skip
-                limit: contributionsPerPage,  // Define contributions per page
+                skip: (currentPage - 1) * contributionsPerPage,
+                limit: contributionsPerPage,
                 searchQuery,
-                status: selectedStatus.join(',')  // Include status filter if any
+                status: selectedStatus.join(',')
             };
             const response = await axios.get('http://127.0.0.1:5000/contributions/', { params });
             setContributions(response.data.contributions);
@@ -47,10 +61,9 @@ const ContributionList = () => {
         queryParams.append('skip', (currentPage - 1) * contributionsPerPage);
         queryParams.append('limit', contributionsPerPage);
 
-        navigate({ search: queryParams.toString() }); // changed from history.push() to navigate()
+        navigate({ search: queryParams.toString() });
     }, [searchQuery, selectedStatus, currentPage, contributionsPerPage, navigate]);
 
-    // Trigger fetchContributions when any filter or page changes
     useEffect(() => {
         fetchContributions();
     }, [fetchContributions]);
@@ -69,6 +82,20 @@ const ContributionList = () => {
 
     const filteredContributions = filterContributionsByStatus(contributions);
 
+    // Map status to BlueprintJS Tag color
+    const statusColor = (status) => {
+        switch (status) {
+            case 'Completed':
+                return 'success'; // Green for completed
+            case 'Active':
+                return 'warning'; // Yellow for active
+            case 'Scheduled':
+                return 'primary'; // Blue for scheduled
+            default:
+                return 'none';
+        }
+    };
+
     return (
         <div className="page-wrapper">
             <Header />
@@ -76,15 +103,23 @@ const ContributionList = () => {
                 <div className="right-side">
                     <SearchBox onSearchFiltersChange={updateFilters} />
                     <div className="contribution-grid">
-                        {loading ? <div>Loading...</div> : filteredContributions.map((contribution) => (
-                            <div key={contribution.id} className="contribution-card">
-                                <h3>{contribution.title}</h3>
-                                <p>{contribution.description}</p>
-                                <p>Start Time: {new Date(contribution.startTime).toLocaleString()}</p>
-                                <p>End Time: {new Date(contribution.endTime).toLocaleString()}</p>
-                                <p>Owner: {contribution.owner}</p>
-                            </div>
-                        ))}
+                        {loading ? (
+                            <div>Loading...</div>
+                        ) : (
+                            filteredContributions.map((contribution) => (
+                                <div key={contribution.id} className="contribution-card">
+                                    <h3>{contribution.title}</h3>
+                                    <p>{contribution.description}</p>
+                                    <p>Start Time: {new Date(contribution.startTime).toLocaleString()}</p>
+                                    <p>End Time: {new Date(contribution.endTime).toLocaleString()}</p>
+                                    <p>Owner: {contribution.owner}</p>
+                                    {/* Display status with BlueprintJS Tag */}
+                                    <Tag intent={statusColor(getStatus(contribution.startTime, contribution.endTime))}>
+                                        {getStatus(contribution.startTime, contribution.endTime)}
+                                    </Tag>
+                                </div>
+                            ))
+                        )}
                     </div>
                     <Pagination className="pagination" size="sm">
                         <Pagination.Prev onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))} disabled={currentPage === 1} />
