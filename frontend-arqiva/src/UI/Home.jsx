@@ -67,7 +67,6 @@ const Home = () => {
       {/* What We Do Section */}
       <WhatWeDo />
 
-      {/* Success Stories Slideshow */}
       <SuccessStories />  {/* Insert Success Stories here */}
 
       {/* Main Content: Container Cards */}
