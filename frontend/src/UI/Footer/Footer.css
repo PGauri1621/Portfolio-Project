@@ -1,0 +1,172 @@
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 40px;
+}
+
+/* Footer Columns */
+.footer-row {
+  margin-bottom: 30px;
+}
+
+/* Footer Column */
+.footer-column {
+  margin-bottom: 30px;
+}
+
+/* Footer Headings */
+.footer h5 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em; 
+  margin-bottom: 15px;
+}
+
+/* Footer Text Styling */
+.footer .contact-info p,
+.footer .legal p,
+.footer .quick-links ul li a,
+.footer .newsletter-column p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-size: 1.1em; 
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.footer .contact-info p,
+.footer .legal p {
+  margin-bottom: 10px;
+}
+
+/* Quick Links Styling */
+.footer .quick-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer .quick-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer .quick-links ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer .quick-links ul li a:hover {
+  color: #007bff;
+}
+
+/* Social Media Icons */
+.footer .social-icons a {
+  margin: 0 10px;
+  font-size: 1.6em;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-column {
+    text-align: center;
+  }
+  .footer h5 {
+    font-size: 1.3em; 
+  }
+}
+
+.newsletter-sitemap-google {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  margin-top: 40px;
+}
+
+.newsletter-column,
+.sitemap-column,
+.google-maps-column {
+  margin-bottom: 20px;
+}
+
+.newsletter-column {
+  padding-right: 20px;
+}
+
+.newsletter-column .btn {
+  margin-top: 10px;
+}
+
+.newsletter-column h5 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.newsletter-column p {
+  font-size: 1.1em;
+  color: #ddd;
+}
+
+.sitemap-column h5 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.sitemap-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sitemap-links li {
+  margin-bottom: 8px;
+}
+
+.sitemap-links li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.sitemap-links li a:hover {
+  color: #007bff;
+}
+
+/* Google Maps Placeholder */
+.google-maps-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-maps-placeholder h5 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.google-maps-placeholder img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+
+.footer .copyright {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1em; 
+  opacity: 0.7;
+  margin-top: 20px;
+}

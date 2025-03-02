@@ -1,0 +1,163 @@
+
+.page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+/* Header styling */
+.header {
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Content wrapper styling */
+.content-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+}
+
+/* Right section (SearchBox and Contribution List) */
+.right-side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Styling for the search box */
+.search-box {
+  margin-bottom: 20px; /* Add space below the search box */
+  background-color: #ffffff;  
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* Contribution grid for the cards - now with 3 cards in a row */
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns on desktop */
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Card styling for individual contributions */
+.contribution-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+}
+
+.contribution-card h3 {
+  font-size: 1.2em;
+  color: #c80032;
+  margin-bottom: 15px;
+}
+
+.contribution-card p {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.contribution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #fafafa; 
+}
+
+/* Pagination styling */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination .page-item {
+  cursor: pointer;
+}
+
+.pagination .page-item.active {
+  font-weight: bold;
+  color: #c80032;
+}
+
+/* Responsiveness: Adjust the grid for smaller screens */
+
+/* For desktop (default) */
+@media (min-width: 1200px) {
+  .contribution-grid {
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns on large screens */
+  }
+}
+
+/* For tablet screens (between 768px and 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .contribution-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on tablets */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .contribution-grid {
+    grid-template-columns: 1fr;  /* 1 column on mobile */
+  }
+}
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  background-image: linear-gradient(135deg, #f0f4f8, #d0d9e1 25%, #f0f4f8 75%); 
+  background-size: 50px 50px;
+  background-attachment: fixed; 
+  background-position: top left;  
+  background-repeat: repeat; 
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+.navbar-nav .nav-dropdown .dropdown-item {
+  color: #343a40;
+}
+
+.navbar-nav .nav-dropdown .dropdown-item:hover {
+  color: #007bff;
+}
