@@ -57,3 +57,5 @@ npm start
 
 Conclusion
 This project aims to deliver a streamlined, user-friendly platform for accessing media content. The use of ReactJS, Flask, and SQLite ensures a lightweight and scalable solution that can be easily expanded with additional features in the future.
+
+NOTE - THIS PROJECT IS STILL IN PROGRESS, MANY FEATURES AND COMPONENTS WILL BE ADDED.
